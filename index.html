@@ -244,15 +244,34 @@
 <section class="stats" id="stats">
   <div class="stats-carousel">
     <div class="stats-carousel__side">
-      <p class="stats-carousel__eyebrow">REAL-TIME</p>
-      <h2 class="stats-carousel__title">실시간<br>작업 현황</h2>
-      <p class="stats-carousel__desc">서비스 누적 요청 수</p>
-      <p class="stats-carousel__number">10,240<span>건+</span></p>
-      <div class="stats-carousel__nav">
-        <button class="stats-carousel__arrow" id="statsPrev" aria-label="이전 항목">‹</button>
-        <button class="stats-carousel__arrow" id="statsNext" aria-label="다음 항목">›</button>
+      <!-- Top Tabs -->
+      <ul class="stats-carousel__tabs">
+        <li class="is-active">실시간 현황</li>
+        <li><a href="#reviews">고객 후기</a></li>
+        <li><a href="#quote">견적 문의</a></li>
+      </ul>
+      
+      <!-- Title & Description -->
+      <div class="stats-carousel__title-wrap">
+        <p class="stats-carousel__eyebrow">REAL-TIME STATUS</p>
+        <h2 class="stats-carousel__title">실시간<br>작업 현황</h2>
+        <p class="stats-carousel__desc">
+          누수마스터는 다양한 현장에서 최첨단 장비와 기술력으로 실시간 시공 현황을 투명하게 공유합니다.
+        </p>
+      </div>
+
+      <!-- Blue Box at bottom left -->
+      <div class="stats-carousel__blue-box">
+        <div class="stats-carousel__nav">
+          <button class="stats-carousel__arrow" id="statsPrev" aria-label="이전 항목">‹</button>
+          <button class="stats-carousel__arrow" id="statsNext" aria-label="다음 항목">›</button>
+        </div>
+        <div class="stats-carousel__progress">
+          <div class="stats-carousel__progress-bar" id="statsProgress" style="width: 20%;"></div>
+        </div>
       </div>
     </div>
+    
     <div class="stats-carousel__viewport" id="statsViewport">
       <div class="stats-carousel__track" id="statsTrack"></div>
     </div>

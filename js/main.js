@@ -31,53 +31,108 @@ if (heroSlides.length) {
   });
 }
 
-// 실시간 작업 현황 카드 (자동 옆으로 스크롤되는 캐러셀)
-const statsRows = [
-  { color: '#f5a623', type: '옥상 방수 누수 진단', price: '15,000원', date: '2026-08-06' },
-  { color: '#4d9bf5', type: '수도관 누수 시공', price: '8,000원', date: '2026-08-06' },
-  { color: '#f5a623', type: '보일러관 누수 진단', price: '15,000원', date: '2026-08-05' },
-  { color: '#5ec98f', type: '욕실 누수 시공', price: '8,000원', date: '2026-08-05' },
-  { color: '#f5a623', type: '옥상 방수 누수 진단', price: '15,000원', date: '2026-08-05' },
-  { color: '#e56b6b', type: '수도관 누수 시공', price: '8,000원', date: '2026-08-04' },
-  { color: '#4d9bf5', type: '보일러관 누수 진단', price: '15,000원', date: '2026-08-04' },
+// 실시간 작업 현황 카드 (Figma/ mockup 스타일 캐러셀)
+const statsCardsData = [
+  {
+    title: '누수 탐지 및 공사',
+    desc: '지하 주차장 천장 누수를 정확하게 탐지하여 배관 고압 시공 및 마감을 확실하게 완료했습니다.',
+    image: 'images/work_leak.jpg',
+    theme: 'dark',
+    tags: ['고압 펌프', '배관 카메라', '보수 완료']
+  },
+  {
+    title: '수도관 누수 복원',
+    desc: '아파트 욕실 벽면 내부 수도관의 미세 균열을 탐지하고, 노후 배관을 새 동관으로 전면 교체하였습니다.',
+    image: 'images/work_pipe.jpg',
+    theme: 'light',
+    tags: ['청음식 탐지', '배관 교체', '타일 복원']
+  },
+  {
+    title: '보일러 분배기 교체',
+    desc: '단독주택 보일러실 배관 분배기 밸브에서의 미세 누수를 감지하여 특수 밸브로 교체 후 열화상 검증을 마쳤습니다.',
+    image: 'images/work_boiler.jpg',
+    theme: 'dark',
+    tags: ['가스 탐지', '분배기 교체', '열화상 검증']
+  },
+  {
+    title: '하수관 누수 정밀 보수',
+    desc: '빌라 공동 하수관 연결 부위의 미세한 틈새 누수를 초정밀 배관 카메라로 탐색하여 특수 방수 실링 처리했습니다.',
+    image: 'images/work_sewage.jpg',
+    theme: 'light',
+    tags: ['내시경 카메라', '방수 실링', '부분 보수']
+  },
+  {
+    title: '일상생활배상책임 보험공사',
+    desc: '아래층 누수 피해 보상과 공사비를 보험 적용하여 복잡한 서류 작업 대행과 함께 비용 부담 없이 진행 완료했습니다.',
+    image: 'images/work_insurance.jpg',
+    theme: 'dark',
+    tags: ['보험 서류 대행', '손해 방지', '부담금 최소화']
+  }
 ];
+
 const statsTrack = document.getElementById('statsTrack');
 if (statsTrack) {
-  statsTrack.innerHTML = statsRows.map(row => `
-    <div class="stats-card">
-      <div class="stats-card__top">
-        <span class="stats-card__dot" style="background:${row.color}"></span>
-        <span class="stats-card__status">확인완료</span>
-      </div>
-      <p class="stats-card__type">${row.type}</p>
-      <p class="stats-card__meta">${row.price} · ${row.date}</p>
-    </div>
-  `).join('');
+  statsTrack.innerHTML = statsCardsData.map(card => {
+    if (card.theme === 'dark') {
+      return `
+        <div class="stats-card stats-card--dark">
+          <div class="stats-card__content">
+            <h3 class="stats-card__title">${card.title}</h3>
+            <p class="stats-card__desc">${card.desc}</p>
+          </div>
+          <div class="stats-card__media">
+            <img src="${card.image}" alt="${card.title}" class="stats-card__img">
+          </div>
+          <div class="stats-card__overlay">
+            <div class="stats-card__tags">
+              ${card.tags.map(t => `<span>${t}</span>`).join('')}
+            </div>
+            <button class="stats-card__plus" aria-label="상세보기">+</button>
+          </div>
+        </div>
+      `;
+    } else {
+      return `
+        <div class="stats-card stats-card--light">
+          <div class="stats-card__content">
+            <h3 class="stats-card__title">${card.title}</h3>
+            <p class="stats-card__desc">${card.desc}</p>
+          </div>
+          <div class="stats-card__media">
+            <img src="${card.image}" alt="${card.title}" class="stats-card__img">
+          </div>
+          <div class="stats-card__bottom">
+            <div class="stats-card__tags">
+              ${card.tags.map(t => `<span>${t}</span>`).join('')}
+            </div>
+            <button class="stats-card__plus" aria-label="상세보기">+</button>
+          </div>
+        </div>
+      `;
+    }
+  }).join('');
 }
 
 const statsViewport = document.getElementById('statsViewport');
+const statsProgress = document.getElementById('statsProgress');
+
 if (statsViewport && statsTrack) {
-  let statsAutoTimer;
-  const startStatsAuto = () => {
-    statsAutoTimer = setInterval(() => {
-      if (statsViewport.scrollLeft + statsViewport.clientWidth >= statsViewport.scrollWidth - 1) {
-        statsViewport.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        statsViewport.scrollLeft += 1;
-      }
-    }, 20);
+  // Update progress bar
+  const updateProgress = () => {
+    if (statsProgress) {
+      const maxScroll = statsViewport.scrollWidth - statsViewport.clientWidth;
+      const progress = maxScroll > 0 ? (statsViewport.scrollLeft / maxScroll) * 100 : 0;
+      statsProgress.style.width = `${Math.min(100, Math.max(15, progress))}%`;
+    }
   };
-  const stopStatsAuto = () => clearInterval(statsAutoTimer);
-  startStatsAuto();
-  statsViewport.addEventListener('mouseenter', stopStatsAuto);
-  statsViewport.addEventListener('mouseleave', startStatsAuto);
-  statsViewport.addEventListener('touchstart', stopStatsAuto, { passive: true });
-  statsViewport.addEventListener('touchend', startStatsAuto, { passive: true });
+
+  statsViewport.addEventListener('scroll', updateProgress);
+  window.addEventListener('resize', updateProgress);
 
   const statsPrev = document.getElementById('statsPrev');
   const statsNext = document.getElementById('statsNext');
-  if (statsPrev) statsPrev.addEventListener('click', () => statsViewport.scrollBy({ left: -280, behavior: 'smooth' }));
-  if (statsNext) statsNext.addEventListener('click', () => statsViewport.scrollBy({ left: 280, behavior: 'smooth' }));
+  if (statsPrev) statsPrev.addEventListener('click', () => statsViewport.scrollBy({ left: -360, behavior: 'smooth' }));
+  if (statsNext) statsNext.addEventListener('click', () => statsViewport.scrollBy({ left: 360, behavior: 'smooth' }));
 }
 
 // Reviews
