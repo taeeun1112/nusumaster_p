@@ -526,7 +526,16 @@ img { max-width: 100%; display: block; }
   margin-bottom: 14px;
   min-height: 38px;
 }
-.zstep__icon { font-size: 20px; }
+.zstep__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border: 3px solid var(--bg-gray);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 .zstep__arrow {
   align-self: center;
   flex: 0 0 auto;
