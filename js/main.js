@@ -190,6 +190,19 @@ const areaInput = document.getElementById('areaSearchInput');
 const areaList = document.getElementById('areaSearchList');
 if (areaInput && areaList) {
   const areaItems = Array.from(areaList.querySelectorAll('li'));
+  
+  // Show list on input focus
+  areaInput.addEventListener('focus', () => {
+    areaList.style.display = 'block';
+  });
+
+  // Hide list when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!areaInput.contains(e.target) && !areaList.contains(e.target)) {
+      areaList.style.display = 'none';
+    }
+  });
+
   areaInput.addEventListener('input', () => {
     const keyword = areaInput.value.trim();
     areaItems.forEach(li => {
@@ -197,9 +210,11 @@ if (areaInput && areaList) {
       li.classList.toggle('is-hidden', !match);
     });
   });
+
   areaItems.forEach(li => {
     li.addEventListener('click', () => {
       areaInput.value = li.dataset.region;
+      areaList.style.display = 'none';
       areaItems.forEach(item => item.classList.remove('is-hidden'));
     });
   });

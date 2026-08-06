@@ -22,6 +22,7 @@ html, body { overflow-x: hidden; }
 
 body {
   margin: 0;
+  padding-top: 76px;
   font-family: "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
   line-height: 1.5;
@@ -49,9 +50,11 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Header ---------- */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   background: #fff;
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
@@ -1038,6 +1041,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
+  display: none;
 }
 .area-search__list li {
   padding: 12px 14px;
@@ -1075,6 +1079,7 @@ img { max-width: 100%; display: block; }
 .footer__logo-img {
   height: 40px;
   display: block;
+  filter: brightness(0) invert(1);
 }
 .footer__wordmark {
   font-size: 20px;
