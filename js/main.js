@@ -135,21 +135,40 @@ if (statsViewport && statsTrack) {
   if (statsNext) statsNext.addEventListener('click', () => statsViewport.scrollBy({ left: 360, behavior: 'smooth' }));
 }
 
-// Reviews
-const reviews = [
-  { text: '누수 원인을 정확하게 찾아주시고, 시공 과정도 꼼꼼하게 설명해 주셔서 믿음이 갔습니다.' },
-  { text: '보일러 배관 누수로 고생했는데 하루 만에 깔끔하게 해결해 주셨어요. 감사합니다.' },
-  { text: '방문부터 시공, 사후관리까지 친절하게 응대해 주셔서 만족스러웠습니다.' },
+// Reviews (Mockup layout style grid)
+const reviewsData = [
+  {
+    image: 'images/diff_visit.jpg',
+    title: '아파트 배관 미세 누수 해결',
+    text: '누수 원인을 정확하게 찾아주시고, 복잡한 탐지 장비와 시공 과정도 친절하고 꼼꼼하게 설명해 주셔서 깊은 믿음이 갔습니다.',
+    btnText: '후기 상세보기'
+  },
+  {
+    image: 'images/equipment_service.jpg',
+    title: '보일러 배관 누수 원스톱 시공',
+    text: '보일러 배관 물샘 문제로 큰 고생을 했는데 신속히 방문해 주셔서 원인 파악부터 공사까지 하루 만에 깔끔하게 해결해 주셨어요.',
+    btnText: '후기 상세보기'
+  },
+  {
+    image: 'images/service_duo.jpg',
+    title: '아래층 천장 물 얼룩 마감 보수',
+    text: '방문부터 시공, 사후 A/S 보장까지 전 과정을 책임지고 친절하게 진행해 주셔서 매우 만족스럽고 이웃 간의 갈등도 잘 풀렸습니다.',
+    btnText: '후기 상세보기'
+  }
 ];
-const reviewsList = document.getElementById('reviewsList');
-if (reviewsList) {
-  reviewsList.innerHTML = reviews.map(r => `
+
+const reviewsGrid = document.getElementById('reviewsGrid');
+if (reviewsGrid) {
+  reviewsGrid.innerHTML = reviewsData.map(r => `
     <div class="review-card">
-      <div class="ph"><span class="ph__icon">👤</span></div>
+      <div class="review-card__media">
+        <img src="${r.image}" alt="${r.title}" class="review-card__img">
+      </div>
       <div class="review-card__body">
-        <h4>○○○ 고객님</h4>
+        <h3 class="review-card__title">${r.title}</h3>
         <p class="review-card__stars">★★★★★</p>
-        <p>${r.text}</p>
+        <p class="review-card__text">${r.text}</p>
+        <a href="#contact" class="review-card__btn">${r.btnText}</a>
       </div>
     </div>
   `).join('');
