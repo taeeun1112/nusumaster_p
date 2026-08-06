@@ -157,7 +157,7 @@ img { max-width: 100%; display: block; }
   z-index: 2;
   color: #fff;
   padding-top: 120px;
-  padding-bottom: 120px;
+  padding-bottom: 48px;
   padding-left: clamp(24px, 8vw, 120px);
   padding-right: 24px;
   flex: 1;
@@ -258,7 +258,7 @@ img { max-width: 100%; display: block; }
 .stats-banner {
   position: relative;
   z-index: 5;
-  margin-top: -64px;
+  margin-top: 0;
 }
 .stats-banner__inner {
   display: grid;
