@@ -1,25 +1,29 @@
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
-navToggle.addEventListener('click', () => {
-  nav.classList.toggle('nav--open');
-});
+if (navToggle && nav) {
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('nav--open');
+  });
+}
 
 // Hero slide dots (visual only, auto-rotate)
 const dots = document.querySelectorAll('.hero__dots button');
-let activeDot = 0;
-setInterval(() => {
-  dots[activeDot].classList.remove('active');
-  activeDot = (activeDot + 1) % dots.length;
-  dots[activeDot].classList.add('active');
-}, 4000);
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
+if (dots.length) {
+  let activeDot = 0;
+  setInterval(() => {
     dots[activeDot].classList.remove('active');
-    activeDot = i;
+    activeDot = (activeDot + 1) % dots.length;
     dots[activeDot].classList.add('active');
+  }, 4000);
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      dots[activeDot].classList.remove('active');
+      activeDot = i;
+      dots[activeDot].classList.add('active');
+    });
   });
-});
+}
 
 // Real-time work status table
 const statsRows = [
@@ -32,15 +36,17 @@ const statsRows = [
   { color: '#4d9bf5', type: '보일러관 누수 진단', price: '15,000원', date: '2026-08-04' },
 ];
 const statsBody = document.getElementById('statsTableBody');
-statsBody.innerHTML = statsRows.map(row => `
-  <tr>
-    <td><span class="tag" style="background:${row.color}"></span></td>
-    <td>${row.type}</td>
-    <td>${row.price}</td>
-    <td>${row.date}</td>
-    <td><span class="status">확인완료</span></td>
-  </tr>
-`).join('');
+if (statsBody) {
+  statsBody.innerHTML = statsRows.map(row => `
+    <tr>
+      <td><span class="tag" style="background:${row.color}"></span></td>
+      <td>${row.type}</td>
+      <td>${row.price}</td>
+      <td>${row.date}</td>
+      <td><span class="status">확인완료</span></td>
+    </tr>
+  `).join('');
+}
 
 // Reviews
 const reviews = [
@@ -49,13 +55,15 @@ const reviews = [
   { text: '방문부터 시공, 사후관리까지 친절하게 응대해 주셔서 만족스러웠습니다.' },
 ];
 const reviewsList = document.getElementById('reviewsList');
-reviewsList.innerHTML = reviews.map(r => `
-  <div class="review-card">
-    <div class="ph"><span class="ph__icon">👤</span></div>
-    <div class="review-card__body">
-      <h4>○○○ 고객님</h4>
-      <p class="review-card__stars">★★★★★</p>
-      <p>${r.text}</p>
+if (reviewsList) {
+  reviewsList.innerHTML = reviews.map(r => `
+    <div class="review-card">
+      <div class="ph"><span class="ph__icon">👤</span></div>
+      <div class="review-card__body">
+        <h4>○○○ 고객님</h4>
+        <p class="review-card__stars">★★★★★</p>
+        <p>${r.text}</p>
+      </div>
     </div>
-  </div>
-`).join('');
+  `).join('');
+}
