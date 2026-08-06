@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8934", "--directory", "/Users/taeeun/Desktop/누수마스터 홈페이지 Re"],
+      "port": 8934
+    }
+  ]
+}
