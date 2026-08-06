@@ -35,12 +35,20 @@
 
 <!-- Hero -->
 <section class="hero" id="hero">
-  <div class="hero__bg" id="heroBg"></div>
+  <div class="hero__bg-slides" id="heroBgSlides">
+    <div class="hero__bg-slide is-active" style="background-image:url('images/hero_bg.jpg')"></div>
+    <div class="hero__bg-slide" style="background-image:url('images/hero_slide1.jpg')"></div>
+    <div class="hero__bg-slide" style="background-image:url('images/hero_slide2.jpg')"></div>
+    <div class="hero__bg-slide" style="background-image:url('images/hero_slide3.jpg')"></div>
+  </div>
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <div class="hero__text-block">
-      <div class="hero__dots" aria-hidden="true">
-        <span></span><span></span><span></span><span></span>
+      <div class="hero__dots" id="heroDots">
+        <button class="is-active" aria-label="1번 이미지"></button>
+        <button aria-label="2번 이미지"></button>
+        <button aria-label="3번 이미지"></button>
+        <button aria-label="4번 이미지"></button>
       </div>
       <h1 class="hero__title">
         미세 누수까지 단번에 찾아드립니다!<br>
@@ -76,15 +84,24 @@
   </div>
 </div>
 
-<!-- Intro banner -->
-<section class="intro-banner">
+<!-- 누수마스터는 이렇게 다릅니다 -->
+<section class="difference" id="difference">
   <div class="container">
-    <p class="intro-banner__q">누수 치료 때문에 걱정하고 계세요?</p>
-    <p class="intro-banner__a">걱정마세요, 누수마스터는 다릅니다.</p>
-    <div class="intro-banner__badges">
-      <div class="badge-card"></div>
-      <div class="badge-card"></div>
-      <div class="badge-card"></div>
+    <h2 class="section-title">누수마스터는 <span>이렇게 다릅니다</span></h2>
+    <p class="section-sub">정확하게 진단하고, 책임 있게 시공하며 끝까지 케어합니다.</p>
+    <div class="difference__grid">
+      <div class="diff-card ph ph--diff1">
+        <img src="images/diff_visit.jpg" class="ph__img" alt="유니폼을 입고 정직하게 방문 점검하는 누수마스터 기사">
+        <span class="diff-card__label">정직원 방문</span>
+      </div>
+      <div class="diff-card ph ph--diff2">
+        <img src="images/equipment_service.jpg" class="ph__img" alt="정밀 장비로 압력을 측정해 문제를 확실히 확인하는 모습">
+        <span class="diff-card__label">출장비 0원</span>
+      </div>
+      <div class="diff-card ph ph--diff3">
+        <img src="images/service_duo.jpg" class="ph__img" alt="사후관리를 위해 배관 카메라로 재점검하는 모습">
+        <span class="diff-card__label">2년 무상<br>A/S</span>
+      </div>
     </div>
   </div>
 </section>
@@ -157,33 +174,11 @@
   </div>
 </section>
 
-<!-- 누수마스터는 이렇게 다릅니다 -->
-<section class="difference" id="difference">
-  <div class="container">
-    <h2 class="section-title">누수마스터는 <span>이렇게 다릅니다</span></h2>
-    <p class="section-sub">정확하게 진단하고, 책임 있게 시공하며 끝까지 케어합니다.</p>
-    <div class="difference__grid">
-      <div class="diff-card ph ph--diff1">
-        <img src="images/diff_visit.jpg" class="ph__img" alt="유니폼을 입고 정직하게 방문 점검하는 누수마스터 기사">
-        <span class="diff-card__label">정직한 방문</span>
-      </div>
-      <div class="diff-card ph ph--diff2">
-        <img src="images/equipment_service.jpg" class="ph__img" alt="정밀 장비로 압력을 측정해 문제를 확실히 확인하는 모습">
-        <span class="diff-card__label">미해결 0원</span>
-      </div>
-      <div class="diff-card ph ph--diff3">
-        <img src="images/service_duo.jpg" class="ph__img" alt="사후관리를 위해 배관 카메라로 재점검하는 모습">
-        <span class="diff-card__label">A/S 보장</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- 프로세스 -->
 <section class="process" id="process">
-  <div class="container">
-    <h2 class="section-title section-title--light">프로세스</h2>
-    <p class="section-sub section-sub--light">전화 상담부터 사후관리까지, 단계별로 확실하게 진행합니다.</p>
+  <div class="container container--wide">
+    <h2 class="section-title">프로세스</h2>
+    <p class="section-sub">전화 상담부터 사후관리까지, 단계별로 확실하게 진행합니다.</p>
     <div class="zigzag">
       <div class="zstep zstep--up">
         <span class="zstep__badge zstep__badge--a">STEP 1</span>
@@ -247,19 +242,19 @@
 
 <!-- 실시간 작업 현황 -->
 <section class="stats" id="stats">
-  <div class="container stats__inner">
-    <div class="stats__left">
-      <h2 class="section-title section-title--left">실시간 작업 현황</h2>
-      <p class="stats__label">서비스 누적 요청 수</p>
-      <p class="stats__number">10,240<span>건+</span></p>
-    </div>
-    <div class="stats__right">
-      <div class="stats__table-wrap">
-        <table class="stats__table">
-          <tbody id="statsTableBody">
-          </tbody>
-        </table>
+  <div class="stats-carousel">
+    <div class="stats-carousel__side">
+      <p class="stats-carousel__eyebrow">REAL-TIME</p>
+      <h2 class="stats-carousel__title">실시간<br>작업 현황</h2>
+      <p class="stats-carousel__desc">서비스 누적 요청 수</p>
+      <p class="stats-carousel__number">10,240<span>건+</span></p>
+      <div class="stats-carousel__nav">
+        <button class="stats-carousel__arrow" id="statsPrev" aria-label="이전 항목">‹</button>
+        <button class="stats-carousel__arrow" id="statsNext" aria-label="다음 항목">›</button>
       </div>
+    </div>
+    <div class="stats-carousel__viewport" id="statsViewport">
+      <div class="stats-carousel__track" id="statsTrack"></div>
     </div>
   </div>
 </section>
@@ -278,13 +273,99 @@
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__logo-wrap">
-      <img src="images/logo.png" alt="누수마스터" class="footer__logo-img">
+<!-- 견적문의 -->
+<section class="quote" id="quote">
+  <div class="container">
+    <h2 class="quote__title">누수마스터 견적문의</h2>
+    <p class="quote__sub">접수 후 30분 이내로 직접 전화드립니다</p>
+
+    <form class="quote__form" id="quoteForm">
+      <div class="quote__form-col">
+        <label class="quote__field">
+          <span>이름</span>
+          <input type="text" name="name" required>
+        </label>
+        <label class="quote__field">
+          <span>연락처</span>
+          <input type="tel" name="phone" placeholder="010-0000-0000" required>
+        </label>
+        <label class="quote__field">
+          <span>상세 주소</span>
+          <input type="text" name="address">
+        </label>
+      </div>
+      <div class="quote__form-col">
+        <label class="quote__field">
+          <span>문의 종류</span>
+          <input type="text" name="type" placeholder="예) 수도관 누수">
+        </label>
+        <label class="quote__field quote__field--grow">
+          <span>문의 내용</span>
+          <textarea name="message" rows="4"></textarea>
+        </label>
+      </div>
+    </form>
+    <button type="submit" form="quoteForm" class="quote__submit">작성하기</button>
+    <p class="quote__notice" id="quoteNotice" aria-live="polite"></p>
+
+    <div class="area-search">
+      <div class="area-search__head">
+        <img src="images/logo.png" alt="" class="area-search__logo">
+        <div>
+          <p class="area-search__title">누수마스터</p>
+          <p class="area-search__title">방문 가능 지역 찾기</p>
+        </div>
+      </div>
+      <input type="text" class="area-search__input" id="areaSearchInput" placeholder="방문 가능 지역 검색하기" autocomplete="off">
+      <ul class="area-search__list" id="areaSearchList">
+        <li data-region="서울">서울</li>
+        <li data-region="경기">경기</li>
+        <li data-region="인천">인천</li>
+      </ul>
     </div>
-    <span class="footer__phone">상담문의 010-2980-5679</span>
-    <span class="footer__copy">&copy; 2026 누수마스터. All rights reserved.</span>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__logo-wrap">
+        <img src="images/logo.png" alt="누수마스터" class="footer__logo-img">
+        <span class="footer__wordmark">누수마스터</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="#">자주 묻는 질문</a>
+        <a href="#">가이드</a>
+        <a href="#">공지사항</a>
+        <a href="#">제휴문의</a>
+      </nav>
+    </div>
+
+    <div class="footer__info">
+      <div class="footer__info-col">
+        <p class="footer__info-title">(주) 누수마스터</p>
+        <p>사업자등록번호 : 000-00-00000 &nbsp;|&nbsp; 대표 : 홍길동</p>
+        <p>통신판매업 신고번호 : 0000-0000-0000</p>
+        <p>주소 : 주소를 입력해 주세요</p>
+        <p>이메일 : contact@nusumaster.com</p>
+      </div>
+      <div class="footer__info-col">
+        <p class="footer__info-title">고객센터</p>
+        <p>전화번호 : 010-2980-5679</p>
+        <p class="footer__info-title footer__info-title--spaced">운영시간</p>
+        <p>월-금 : 09:00 ~ 18:00</p>
+        <p>점심시간 : 12:00 ~ 13:00 (주말, 공휴일 제외)</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__legal">
+        <a href="#">이용약관</a>
+        <a href="#" class="footer__legal--strong">개인정보처리방침</a>
+        <a href="#">정보보호현황</a>
+      </div>
+      <span class="footer__copy">&copy; 2026 누수마스터. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
