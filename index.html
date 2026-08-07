@@ -1,399 +1,692 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>누수마스터 | 미세 누수까지 단번에 찾아드립니다</title>
-<meta name="description" content="미세누수까지 단번에 찾아드립니다. 믿고 맡길 수 있는 올인원 케어 솔루션. 보험처리로 비용 걱정 없이 누수 아래층 피해까지 즉시해결.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=3">
-</head>
-<body>
 
-<!-- Header -->
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a href="#" class="logo">
-      <img src="images/logo.png" alt="누수마스터" class="logo__img">
+<head>
+  <!-- Smartlog -->
+  <script type="text/javascript">
+    var hpt_info = { '_account': 'UHPT-36843', '_server': 'a30' };
+  </script>
+  <script language="javascript" src="//cdn.smlog.co.kr/core/smart.js" charset="utf-8"></script>
+  <noscript><img src="//a30.smlog.co.kr/smart_bda.php?_account=36843" style="display:none;width:0;height:0;"
+      border="0" /></noscript>
+  <meta charset="UTF-8">
+  <meta name="naver-site-verification" content="604e56fc4893c5a9d1f394ef434fca8f4ce80470" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CRD078P3C1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-CRD078P3C1');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="서울·경기·인천 누수탐지 전문 누수마스터. 24시간 출장, 아파트누수·배관수리·하수구막힘 즉시 해결. 보험처리 가능.">
+  <meta name="keywords"
+    content="서울누수탐지, 강남누수탐지, 서초구누수수리, 경기누수탐지, 인천누수탐지, 아파트누수, 누수탐지비용, 배관누수, 천장누수, 화장실누수, 보일러배관누수, 24시간누수탐지, 누수보험처리, 싱크대막힘, 변기막힘, 하수구막힘, 누수마스터">
+  <title>누수마스터 | 서울·경기·인천 24시간 누수탐지 배관수리 전문</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="누수마스터 | 서울·경기·인천 24시간 누수탐지 전문">
+  <meta property="og:description" content="서울·경기·인천 누수탐지 전문. 24시간 출장, 아파트누수·배관수리·하수구막힘 즉시 해결. 보험처리 가능.">
+  <meta property="og:url" content="https://nusumaster.com/">
+  <meta property="og:image" content="https://nusumaster.com/images/logo.png">
+  <meta property="og:site_name" content="누수마스터">
+
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="누수마스터 블로그" href="https://nusumaster.com/rss.xml">
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" as="image" href="images/page1/1-1.webp">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <script type="text/javascript"
+    src="https://admin.livead.co.kr/api/antifraud.js?channelId=1b1a2514-930d-4070-95d0-4bf1c30f28d0"></script>
+
+  <!-- 구조화 데이터 (SEO) -->
+  <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://nusumaster.com/#business",
+        "name": "누수마스터",
+        "description": "서울·경기·인천 누수탐지 배관수리 전문 업체. 24시간 출장, 보험처리 가능.",
+        "url": "https://nusumaster.com",
+        "telephone": "010-2980-5679",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "도구로 111, 1층",
+            "addressLocality": "서초구",
+            "addressRegion": "서울특별시",
+            "postalCode": "06754",
+            "addressCountry": "KR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "37.4837",
+            "longitude": "127.0324"
+        },
+        "areaServed": [
+            {"@type": "City", "name": "서울"},
+            {"@type": "City", "name": "인천"},
+            {"@type": "State", "name": "경기도"}
+        ],
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "priceRange": "$$",
+        "image": "https://nusumaster.com/images/logo.png",
+        "logo": "https://nusumaster.com/images/logo.png",
+        "serviceType": ["누수탐지", "배관수리", "하수구막힘", "보일러배관", "누수보험처리"],
+        "sameAs": [
+            "https://pf.kakao.com/_vAxkgn/chat"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "32000"
+        }
+    }
+    </script>
+  <!-- WebSite 구조화 데이터 -->
+  <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "누수마스터",
+        "url": "https://nusumaster.com",
+        "description": "서울·경기·인천 누수탐지 배관수리 전문",
+        "publisher": {
+            "@type": "LocalBusiness",
+            "@id": "https://nusumaster.com/#business"
+        }
+    }
+    </script>
+  <!-- BreadcrumbList 구조화 데이터 -->
+  <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "홈",
+            "item": "https://nusumaster.com/"
+        }]
+    }
+    </script>
+  <link rel="canonical" href="https://nusumaster.com/" />
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="images/logo.png" alt="누수마스터 로고">
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="about.html">누수마스터 소개</a></li>
+          <li class="nav-dropdown">
+            <a href="#">시공영역</a>
+            <ul class="dropdown-menu">
+              <li><a href="services/leak-detection.html">누수탐지</a></li>
+              <li><a href="services/water-pipe.html">수도배관</a></li>
+              <li><a href="services/boiler-pipe.html">보일러배관</a></li>
+              <li><a href="services/sewer.html">하수구</a></li>
+              <li><a href="services/insurance.html">보험처리</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a href="#">지역별 안내</a>
+            <ul class="dropdown-menu">
+              <li><a href="areas/seoul.html">서울</a></li>
+              <li><a href="areas/gyeonggi.html">경기</a></li>
+              <li><a href="areas/incheon.html">인천</a></li>
+            </ul>
+          </li>
+          <li><a href="faq.html">자주 묻는 질문</a></li>
+          <li><a href="blog.html">블로그</a></li>
+        </ul>
+      </nav>
+      <a href="tel:010-2980-5679" class="header-phone">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+        </svg>
+        <span>010-2980-5679</span>
+      </a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero" id="hero">
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image: url('images/page1/1-1.webp')"></div>
+      <div class="hero-slide" style="background-image: url('images/page1/1-2.webp')"></div>
+      <div class="hero-slide" style="background-image: url('images/page1/1-3.webp')"></div>
+      <div class="hero-slide" style="background-image: url('images/page1/1-4.webp')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-wrapper">
+      <div class="hero-content">
+        <!-- SEO용 숨김 H1 -->
+        <h1 class="visually-hidden">서울 경기 인천 누수탐지 배관수리 전문 - 누수마스터</h1>
+        <p class="hero-title" role="heading" aria-level="2">
+          <!-- 웹용 문구 -->
+          <span class="hero-text-desktop">
+            <span class="water-drop-text"><span class="drop-char">미</span><span class="drop-char">세</span> <span
+                class="drop-char">누</span><span class="drop-char">수</span></span>까지 단번에 찾아드립니다!<br>
+            믿고 맡길 수 있는 <span class="hero-highlight">올인원 케어솔루션</span>
+          </span>
+          <!-- 모바일용 문구 -->
+          <span class="hero-text-mobile">
+            <span class="water-drop-text"><span class="drop-char">미</span><span class="drop-char">세</span> <span
+                class="drop-char">누</span><span class="drop-char">수</span></span>도 단번에!<br>
+            믿을 수 있는 <span class="hero-highlight">올인원 케어</span>
+          </span>
+        </p>
+        <p class="hero-desc hero-desc-desktop"><span class="hero-accent">보험처리</span>로 비용 걱정 없이 누수·아래층 피해까지 즉시 해결</p>
+        <p class="hero-desc hero-desc-mobile"><span class="hero-accent">보험처리</span>로 비용 걱정 없이 누수 문제 즉시 해결</p>
+        <a href="tel:010-2980-5679" class="hero-btn primary">
+          상담문의 010-2980-5679
+        </a>
+      </div>
+    </div>
+    <a href="#catchphrase" class="hero-scroll-btn" aria-label="아래로 스크롤">
+      <svg viewBox="0 0 24 28" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="6 4 12 10 18 4" />
+        <polyline points="6 11 12 17 18 11" />
+        <polyline points="6 18 12 24 18 18" />
+      </svg>
     </a>
-    <nav class="nav" id="nav">
-      <a href="#about">회사소개</a>
-      <a href="#service">서비스안내</a>
-      <a href="#contact">상담/문의</a>
-    </nav>
-    <a href="tel:010-2980-5679" class="header__phone">
-      <span class="icon-phone-svg" aria-hidden="true">📞</span>
-      010 - 2980 - 5679
+    <div class="hero-pagination">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+    </div>
+  </section>
+
+  <!-- 캐치프레이즈 섹션 -->
+  <section class="catchphrase" id="catchphrase">
+    <p class="catchphrase-headline">누수 비용 때문에 망설이고 계세요?</p>
+    <p class="catchphrase-subheadline">걱정마세요, 누수마스터는 다릅니다.</p>
+    <div class="catchphrase-inner">
+      <!-- Step 01 카드 (출장비) -->
+      <div class="catchphrase-item step-1">
+        <div class="card-circle">
+          <svg class="catchphrase-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
+          </svg>
+          <span class="step-num">Step 01</span>
+          <span class="catchphrase-label">출장비 0원</span>
+          <span class="catchphrase-desc">원인을 못 찾으면<br>출장비는 청구되지 않습니다.</span>
+          <span class="catchphrase-value" data-count="0" data-suffix="원">0원</span>
+        </div>
+      </div>
+
+      <div class="catchphrase-connector" aria-hidden="true"></div>
+
+      <!-- Step 02 카드 (무상 A/S) -->
+      <div class="catchphrase-item step-2">
+        <div class="card-circle">
+          <svg class="catchphrase-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+          </svg>
+          <span class="step-num">Step 02</span>
+          <span class="catchphrase-label">무상 A/S 1년</span>
+          <span class="catchphrase-desc">시공 후 문제 발생 시<br>1년간 무상 수리를 보장합니다.</span>
+          <span class="catchphrase-value" data-count="1" data-suffix="년">1년</span>
+        </div>
+      </div>
+
+      <div class="catchphrase-connector" aria-hidden="true"></div>
+
+      <!-- Step 03 카드 (미해결) -->
+      <div class="catchphrase-item step-3">
+        <div class="card-circle">
+          <svg class="catchphrase-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
+          </svg>
+          <span class="step-num">Step 03</span>
+          <span class="catchphrase-label">미해결 0원</span>
+          <span class="catchphrase-desc">누수 해결 실패 시<br>시공 비용은 0원입니다.</span>
+          <span class="catchphrase-value" data-count="0" data-suffix="원">0원</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 상담 & 시공 올인원 서비스 섹션 -->
+  <section class="allinone-service">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">상담 & 시공 <span class="highlight">올인원 서비스</span></h2>
+      <div class="allinone-wrapper">
+        <div class="allinone-row" data-aos="fade-up">
+          <div class="allinone-text-group">
+            <div class="allinone-item">
+              <h3>1:1 맞춤 상담</h3>
+              <p>전화·온라인 상담으로 발생 증상을 확인하고, <br>필요한 경우 현장 출동 전 대략적인 원인과 <br>조치 방향을 안내드립니다.</p>
+            </div>
+            <div class="allinone-item">
+              <h3>투명한 가격 안내</h3>
+              <p>방문 후 전문 장비로 진단하고 투명한 견적을 제공해 드리며, <br>작업 시 불필요한 추가 비용은 발생하지 않습니다.</p>
+            </div>
+          </div>
+          <div class="allinone-image">
+            <img src="images/page2/2-1.jpg" alt="1:1 맞춤 상담" loading="lazy">
+          </div>
+        </div>
+        <div class="allinone-row reverse" data-aos="fade-up">
+          <div class="allinone-text-group">
+            <div class="allinone-item">
+              <h3>맞춤형 진단 솔루션</h3>
+              <p>건물 구조와 상황에 따라 여러 대안을 설명드리고 <br>고객의 예산과 조건에 맞는 방법을 안내합니다.</p>
+            </div>
+            <div class="allinone-item">
+              <h3>사후 관리 보장</h3>
+              <p>상담·견적 내용을 기록으로 남기고 <br>공사 후에도 사후 관리를 통해 끝까지 책임집니다.</p>
+            </div>
+          </div>
+          <div class="allinone-image">
+            <img src="images/page2/2-2.jpg" alt="맞춤형 진단 솔루션" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 시공영역 섹션 -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">시공영역</h2>
+      <div class="services-grid services-grid-5">
+        <a href="services/leak-detection.html" class="service-card" data-aos="fade-up" data-aos-delay="50">
+          <div class="service-image">
+            <img src="images/page3/3-1.png" alt="누수 공사" loading="lazy">
+          </div>
+          <h3>누수 공사</h3>
+        </a>
+        <a href="services/water-pipe.html" class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-image">
+            <img src="images/page3/3-2.png" alt="수도관 누수" loading="lazy">
+          </div>
+          <h3>수도관 누수</h3>
+        </a>
+        <a href="services/boiler-pipe.html" class="service-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="service-image">
+            <img src="images/page3/3-3.png" alt="보일러관 누수" loading="lazy">
+          </div>
+          <h3>보일러관 누수</h3>
+        </a>
+        <a href="services/sewer.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-image">
+            <img src="images/page3/3-4.png" alt="하수관 누수" loading="lazy">
+          </div>
+          <h3>하수관 누수</h3>
+        </a>
+        <a href="services/insurance.html" class="service-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="service-image">
+            <img src="images/page3/3-5.png" alt="누수 보험" loading="lazy">
+          </div>
+          <h3>누수 보험</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 작업 프로세스 섹션 -->
+  <section class="process" id="process">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">프로세스</h2>
+      <div class="process-timeline">
+        <div class="timeline-track"></div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
+          <div class="timeline-node"><span class="node-number">1</span></div>
+          <div class="timeline-content">
+            <h4>고객 상담</h4>
+            <p>전문가와 상담 후<br>방문 일정 조율</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-node"><span class="node-number">2</span></div>
+          <div class="timeline-content">
+            <h4>현장<br class="mobile-br"> 점검/진단</h4>
+            <p>방문 후 문제를<br>점검 후 안내</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="timeline-node"><span class="node-number">3</span></div>
+          <div class="timeline-content">
+            <h4>누수<br class="mobile-br"> 문제해결</h4>
+            <p>현장상황에 맞는<br>시공방법을 통해 해결</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
+          <div class="timeline-node dark"><span class="node-number">4</span></div>
+          <div class="timeline-content">
+            <h4>사후관리<br class="mobile-br"> 및 A/S</h4>
+            <p>시공 마무리 후<br>관리 Tip 및 A/S 안내</p>
+          </div>
+        </div>
+      </div>
+      <div class="equipment-section" data-aos="fade-up">
+        <div class="equipment-layout">
+          <div class="equipment-left">
+            <div class="equipment-text">
+              <h3>최고급 장비로<br><span class="highlight">보이지 않는 곳까지 세밀하게</span></h3>
+            </div>
+            <div class="equipment-image">
+              <img src="images/page5/5-1.webp" alt="전문 장비" loading="lazy">
+            </div>
+          </div>
+          <div class="equipment-right">
+            <div class="equipment-image">
+              <img src="images/page5/5-2.webp" alt="작업 도구" loading="lazy">
+            </div>
+            <div class="equipment-image">
+              <img src="images/page5/5-3.webp" alt="고객 소통" loading="lazy">
+              <span class="equipment-caption">고객과의 소통을 통해<br>원활하게 수리합니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 실시간 작업 현황 섹션 -->
+  <section class="realtime-status">
+    <div class="container">
+      <div class="status-wrapper">
+        <div class="status-left" data-aos="fade-right">
+          <h2 class="status-title">실시간 작업 현황</h2>
+          <p class="status-subtitle">서비스 누적 요청 수</p>
+          <p class="status-count"><span class="counter" data-target="32000">0</span>건+</p>
+        </div>
+        <div class="status-right" data-aos="fade-left">
+          <div class="status-list">
+            <div class="status-item">
+              <span class="status-badge leak">누수</span>
+              <span class="status-location">출동위치 > 서울 강남구 역삼동</span>
+              <span class="status-name">김OO</span>
+              <span class="status-date">2025-12-24</span>
+              <span class="status-state dispatch">작업출동</span>
+            </div>
+            <div class="status-item">
+              <span class="status-badge boiler">보일러</span>
+              <span class="status-location">출동위치 > 서울 서초구 반포동</span>
+              <span class="status-name">최OO</span>
+              <span class="status-date">2025-12-24</span>
+              <span class="status-state dispatch">작업출동</span>
+            </div>
+            <div class="status-item">
+              <span class="status-badge sewer">하수</span>
+              <span class="status-location">출동위치 > 경기 성남시 분당구</span>
+              <span class="status-name">박OO</span>
+              <span class="status-date">2025-12-24</span>
+              <span class="status-state complete">작업완료</span>
+            </div>
+            <div class="status-item">
+              <span class="status-badge leak">누수</span>
+              <span class="status-location">출동위치 > 서울 마포구 상수동</span>
+              <span class="status-name">정OO</span>
+              <span class="status-date">2025-12-23</span>
+              <span class="status-state complete">작업완료</span>
+            </div>
+            <div class="status-item">
+              <span class="status-badge pipe">배관</span>
+              <span class="status-location">출동위치 > 경기 용인시 수지구</span>
+              <span class="status-name">이OO</span>
+              <span class="status-date">2025-12-23</span>
+              <span class="status-state complete">작업완료</span>
+            </div>
+            <div class="status-item">
+              <span class="status-badge leak">누수</span>
+              <span class="status-location">출동위치 > 인천 부평구 부평동</span>
+              <span class="status-name">한OO</span>
+              <span class="status-date">2025-12-23</span>
+              <span class="status-state complete">작업완료</span>
+            </div>
+            <div class="status-item">
+              <span class="status-badge sewer">하수</span>
+              <span class="status-location">출동위치 > 서울 송파구 잠실동</span>
+              <span class="status-name">윤OO</span>
+              <span class="status-date">2025-12-22</span>
+              <span class="status-state complete">작업완료</span>
+            </div>
+            <div class="status-item">
+              <span class="status-badge boiler">보일러</span>
+              <span class="status-location">출동위치 > 경기 수원시 영통구</span>
+              <span class="status-name">강OO</span>
+              <span class="status-date">2025-12-22</span>
+              <span class="status-state complete">작업완료</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 고객 후기 섹션 -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reviews-wrapper">
+        <div class="reviews-list" data-aos="fade-right">
+          <div class="review-card">
+            <div class="review-image">
+              <img src="images/page6/6-1.png" alt="고객 후기" loading="lazy">
+            </div>
+            <div class="review-content">
+              <div class="review-header">
+                <span class="review-author">김OO 고객님</span>
+                <div class="review-stars">
+                  <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+              </div>
+              <p>매번 다른 곳에서 수리를 맡겨봤지만 계속 문제가 생겨 고민이 많았습니다.<br>이번에 맡긴 기사님은 현장 경험이 많으셔서 그런지 금방 원인을 잡아내고 확실히 고쳐주셨습니다.<br>설명도
+                친절하게 해주시고, 장비도 좋아서 믿음이 갔습니다! 다음에도 또 맡기고 싶어요</p>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-image">
+              <img src="images/page6/6-2.png" alt="고객 후기" loading="lazy">
+            </div>
+            <div class="review-content">
+              <div class="review-header">
+                <span class="review-author">경OO 고객님</span>
+                <div class="review-stars">
+                  <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+              </div>
+              <p>처음엔 반신반의했는데, 현장에서 바로 진단하고<br>수리까지 완벽하게 마무리해주셔서 감탄했습니다.<br>믿고 맡길 수 있는 전문가를 찾은 것 같습니다.</p>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-image">
+              <img src="images/page6/6-3.png" alt="고객 후기" loading="lazy">
+            </div>
+            <div class="review-content">
+              <div class="review-header">
+                <span class="review-author">윤OO 고객님</span>
+                <div class="review-stars">
+                  <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+              </div>
+              <p>여러 번 수리해도 계속 말썽이었는데,<br>이번 기사님은 현장 경험으로 단숨에 원인을 잡고 확실히 고쳐주셨습니다!<br>친절한 설명과 최신 장비에 믿음이 갔어요. 이제 배관 문제는 고민
+                없이<br>여기에만 맡길 겁니다! 다음에도 무조건 재의뢰할게요!</p>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-summary" data-aos="fade-left">
+          <h3>월 <span class="highlight-number">270건</span> 이상 작업</h3>
+          <p class="summary-subtitle">서비스 이용 만족도</p>
+          <div class="summary-rating">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="rating-number">5.0점</span>
+          </div>
+          <p class="summary-slogan">고객님의 신뢰가 저희의 자부심입니다</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA 섹션 -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-wrapper">
+        <div class="cta-image" data-aos="fade-right">
+          <img src="images/logo.png" alt="누수마스터 로고" loading="lazy">
+        </div>
+        <div class="cta-content" data-aos="fade-left">
+          <h2>365일 간편 상담</h2>
+          <div class="cta-buttons">
+            <a href="tel:010-2980-5679" class="cta-btn phone">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+              </svg>
+              전화 상담
+            </a>
+            <a href="https://pf.kakao.com/_vAxkgn/chat" target="_blank" class="cta-btn kakao">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 3c-5.52 0-10 3.59-10 8 0 2.79 1.81 5.24 4.54 6.63-.2.76-.73 2.76-.84 3.19-.13.53.19.52.4.38.17-.11 2.62-1.78 3.68-2.5.72.1 1.47.15 2.22.15 5.52 0 10-3.59 10-8s-4.48-8-10-8z" />
+              </svg>
+              카톡 상담
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cta-phone-banner">
+      <p>무료상담 <span class="phone-number">010-2980-5679</span></p>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="누수마스터" loading="lazy">
+        </div>
+        <div class="footer-info">
+          <p><strong>누수마스터</strong></p>
+          <p>대표: 이동규 | 사업자등록번호: 163-19-01428</p>
+          <p>주소: 서울특별시 서초구 도구로 111, 1층</p>
+          <p>전화: 010-2980-5679</p>
+        </div>
+        <div class="footer-links">
+          <p><strong>서비스 지역</strong></p>
+          <p><a href="areas/seoul.html">서울</a> | <a href="areas/gyeonggi.html">경기</a> | <a
+              href="areas/incheon.html">인천</a></p>
+          <p style="margin-top: 10px;"><a href="faq.html">자주 묻는 질문</a></p>
+        </div>
+      </div>
+      <div class="footer-areas">
+        <p><strong>서울</strong>: <a href="/areas/seoul.html">강남구</a> · <a href="/areas/seoul.html">서초구</a> · <a
+            href="/areas/seoul.html">송파구</a> · <a href="/areas/seoul.html">강동구</a> · <a href="/areas/seoul.html">마포구</a>
+          · <a href="/areas/seoul.html">용산구</a> · <a href="/areas/seoul.html">영등포구</a> · <a
+            href="/areas/seoul.html">관악구</a> · <a href="/areas/seoul.html">동작구</a> · <a href="/areas/seoul.html">강서구</a>
+          · <a href="/areas/seoul.html">양천구</a> · <a href="/areas/seoul.html">성동구</a> · <a
+            href="/areas/seoul.html">광진구</a> · <a href="/areas/seoul.html">동대문구</a> · <a
+            href="/areas/seoul.html">성북구</a> · <a href="/areas/seoul.html">노원구</a> · <a href="/areas/seoul.html">강북구</a>
+          · <a href="/areas/seoul.html">도봉구</a> · <a href="/areas/seoul.html">구로구</a> · <a
+            href="/areas/seoul.html">금천구</a> · <a href="/areas/seoul.html">은평구</a> · <a
+            href="/areas/seoul.html">서대문구</a> · <a href="/areas/seoul.html">종로구</a> · <a href="/areas/seoul.html">중구</a>
+          · <a href="/areas/seoul.html">중랑구</a></p>
+        <p><strong>경기</strong>: <a href="/areas/gyeonggi.html">수원</a> · <a href="/areas/gyeonggi.html">성남</a> · <a
+            href="/areas/gyeonggi.html">용인</a> · <a href="/areas/gyeonggi.html">화성</a> · <a
+            href="/areas/gyeonggi.html">고양시</a> · <a href="/areas/gyeonggi.html">부천</a> · <a
+            href="/areas/gyeonggi.html">광주</a> · <a href="/areas/gyeonggi.html">안산</a> · <a
+            href="/areas/gyeonggi.html">시흥</a> · <a href="/areas/gyeonggi.html">평택</a> · <a
+            href="/areas/gyeonggi.html">김포</a> · <a href="/areas/gyeonggi.html">광명</a> · <a
+            href="/areas/gyeonggi.html">하남</a> · <a href="/areas/gyeonggi.html">파주</a> · <a
+            href="/areas/gyeonggi.html">남양주</a> · <a href="/areas/gyeonggi.html">의정부</a> · <a
+            href="/areas/gyeonggi.html">양주</a> · <a href="/areas/gyeonggi.html">구리</a> · <a
+            href="/areas/gyeonggi.html">군포</a> · <a href="/areas/gyeonggi.html">의왕</a> · <a
+            href="/areas/gyeonggi.html">안성</a> · <a href="/areas/gyeonggi.html">오산</a> · <a
+            href="/areas/gyeonggi.html">이천</a> · <a href="/areas/gyeonggi.html">여주</a> · <a
+            href="/areas/gyeonggi.html">양평</a> · <a href="/areas/gyeonggi.html">과천</a> · <a
+            href="/areas/gyeonggi.html">동두천</a> · <a href="/areas/gyeonggi.html">포천</a> · <a
+            href="/areas/gyeonggi.html">가평</a> · <a href="/areas/gyeonggi.html">연천</a></p>
+        <p><strong>인천</strong>: <a href="/areas/incheon.html">남동구</a> · <a href="/areas/incheon.html">부평구</a> · <a
+            href="/areas/incheon.html">서구</a> · <a href="/areas/incheon.html">연수구</a> · <a
+            href="/areas/incheon.html">계양구</a> · <a href="/areas/incheon.html">미추홀구</a> · <a
+            href="/areas/incheon.html">중구</a> · <a href="/areas/incheon.html">동구</a> · <a
+            href="/areas/incheon.html">강화군</a> · <a href="/areas/incheon.html">옹진군</a></p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 누수마스터. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 플로팅 버튼 -->
+  <div class="floating-buttons">
+    <a href="tel:010-2980-5679" class="floating-btn phone-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+      </svg>
+      <span class="btn-label">전화상담</span>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
-      <span></span><span></span><span></span>
+    <a href="https://pf.kakao.com/_vAxkgn/chat" target="_blank" class="floating-btn kakao-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 3c-5.52 0-10 3.59-10 8 0 2.79 1.81 5.24 4.54 6.63-.2.76-.73 2.76-.84 3.19-.13.53.19.52.4.38.17-.11 2.62-1.78 3.68-2.5.72.1 1.47.15 2.22.15 5.52 0 10-3.59 10-8s-4.48-8-10-8z" />
+      </svg>
+      <span class="btn-label">카톡상담</span>
+    </a>
+    <button class="floating-btn top-btn" id="topBtn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+      </svg>
+      <span class="btn-label">TOP</span>
     </button>
   </div>
-</header>
 
-<!-- Hero -->
-<section class="hero" id="hero">
-  <div class="hero__bg-slides" id="heroBgSlides">
-    <div class="hero__bg-slide is-active" style="background-image:url('images/hero_bg.jpg')"></div>
-    <div class="hero__bg-slide" style="background-image:url('images/hero_slide1.jpg')"></div>
-    <div class="hero__bg-slide" style="background-image:url('images/hero_slide2.jpg')"></div>
-    <div class="hero__bg-slide" style="background-image:url('images/hero_slide3.jpg')"></div>
-  </div>
-  <div class="hero__overlay"></div>
-  <div class="hero__content">
-    <div class="hero__text-block">
-      <div class="hero__dots" id="heroDots">
-        <button class="is-active" aria-label="1번 이미지"></button>
-        <button aria-label="2번 이미지"></button>
-        <button aria-label="3번 이미지"></button>
-        <button aria-label="4번 이미지"></button>
-      </div>
-      <h1 class="hero__title">
-        미세 누수까지 단번에 찾아드립니다!<br>
-        믿고 맡길 수 있는 <span class="hero__title--blue">올인원 케어솔루션</span>
-      </h1>
-      <p class="hero__sub">
-        <span class="hero__sub--yellow">보험처리</span>로 비용 걱정 없이 누수·아래층 피해까지 즉시 해결
-      </p>
-      <a href="tel:010-2980-5679" class="btn btn--consult" id="hero-consult-btn">상담문의 010-2980-5679</a>
-    </div>
-  </div>
+  <!-- 모바일 하단 네비게이션 바 (768px 이하에서만 표시) -->
+  <nav class="mobile-bottom-nav">
+    <a href="tel:010-2980-5679" class="nav-item">
+      <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+      </svg>
+      <span class="nav-label">전화상담</span>
+    </a>
+    <a href="#hero" class="nav-item nav-home">
+      <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      </svg>
+      <span class="nav-label">홈</span>
+    </a>
+    <a href="https://pf.kakao.com/_vAxkgn/chat" target="_blank" class="nav-item">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 3c-5.52 0-10 3.59-10 8 0 2.79 1.81 5.24 4.54 6.63-.2.76-.73 2.76-.84 3.19-.13.53.19.52.4.38.17-.11 2.62-1.78 3.68-2.5.72.1 1.47.15 2.22.15 5.52 0 10-3.59 10-8s-4.48-8-10-8z" />
+      </svg>
+      <span class="nav-label">카톡상담</span>
+    </a>
+  </nav>
 
-  <!-- Stats Banner (히어로 사진 위에 겹치는 유리질감 배너) -->
-  <div class="stats-banner">
-    <div class="stats-banner__inner">
-      <div class="stats-banner__item">
-        <span class="stats-banner__num">+20</span>
-        <span class="stats-banner__label">경력 년수</span>
-      </div>
-      <div class="stats-banner__item">
-        <span class="stats-banner__num">95%</span>
-        <span class="stats-banner__label">고객만족도</span>
-      </div>
-      <div class="stats-banner__item">
-        <span class="stats-banner__num">3676+</span>
-        <span class="stats-banner__label">누적 시공 건수</span>
-      </div>
-      <div class="stats-banner__item">
-        <span class="stats-banner__num">10+</span>
-        <span class="stats-banner__label">보유 특수장비</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 누수마스터는 이렇게 다릅니다 -->
-<section class="difference" id="difference">
-  <div class="container">
-    <h2 class="section-title">누수마스터는 <span>이렇게 다릅니다</span></h2>
-    <p class="section-sub">정확하게 진단하고, 책임 있게 시공하며 끝까지 케어합니다.</p>
-    <div class="difference__grid">
-      <div class="diff-card ph ph--diff1">
-        <img src="images/diff_visit.jpg" class="ph__img" alt="유니폼을 입고 정직하게 방문 점검하는 누수마스터 기사">
-        <span class="diff-card__label">정직원 방문</span>
-      </div>
-      <div class="diff-card ph ph--diff2">
-        <img src="images/equipment_service.jpg" class="ph__img" alt="정밀 장비로 압력을 측정해 문제를 확실히 확인하는 모습">
-        <span class="diff-card__label">출장비 0원</span>
-      </div>
-      <div class="diff-card ph ph--diff3">
-        <img src="images/service_duo.jpg" class="ph__img" alt="사후관리를 위해 배관 카메라로 재점검하는 모습">
-        <span class="diff-card__label">2년 무상<br>A/S</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 상담 & 시공 올인원 서비스 -->
-<section class="service" id="service">
-  <div class="container">
-    <h2 class="section-title">상담 &amp; 시공 <span>올인원</span> 서비스</h2>
-
-    <div class="service__row">
-      <div class="service__text">
-        <div class="service__item">
-          <h3><span class="bar"></span>1:1 맞춤 상담</h3>
-          <p>전화 문의만으로 상담부터 방문 일정을 확정하며, 현장에 방문 후 진단 결과를 투명하게 안내드립니다.</p>
-        </div>
-        <div class="service__item">
-          <h3><span class="bar"></span>투명한 가격 안내</h3>
-          <p>현장 진단 완료 후 견적을 안내드리며, 작업 시 불필요한 추가 비용이 발생하지 않습니다.</p>
-        </div>
-      </div>
-      <div class="service__media ph ph--worker-ceiling">
-        <img src="images/service_ceiling.jpg" class="ph__img" alt="열화상 카메라로 누수 원인을 진단하는 누수마스터 기사">
-      </div>
-    </div>
-
-    <div class="service__row service__row--reverse">
-      <div class="service__media ph ph--worker-duo">
-        <img src="images/service_duo.jpg" class="ph__img" alt="고객과 함께 배관 카메라 진단 결과를 확인하는 모습">
-      </div>
-      <div class="service__text">
-        <div class="service__item">
-          <h3><span class="bar"></span>맞춤형 진단 솔루션</h3>
-          <p>건물 구조와 상황에 따라 최적의 대응책을 설계하고, 고객의 예산과 상황에 맞는 방법을 안내합니다.</p>
-        </div>
-        <div class="service__item">
-          <h3><span class="bar"></span>사후 관리 보장</h3>
-          <p>담당 관리 대표를 지정하여 시공 후에도 재발 관리를 통해 꼼꼼히 케어합니다.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 시공영역 -->
-<section class="work-areas" id="work-areas">
-  <div class="container">
-    <h2 class="section-title">시공영역</h2>
-    <div class="work-areas__grid">
-      <div class="work-card">
-        <div class="ph ph--faucet"><img src="images/work_leak.jpg" class="ph__img" alt="누수 공사"></div>
-        <p>누수 공사</p>
-      </div>
-      <div class="work-card">
-        <div class="ph ph--pipe"><img src="images/work_pipe.jpg" class="ph__img" alt="수도관 누수"></div>
-        <p>수도관 누수</p>
-      </div>
-      <div class="work-card">
-        <div class="ph ph--boiler"><img src="images/work_boiler.jpg" class="ph__img" alt="보일러관 누수"></div>
-        <p>보일러관 누수</p>
-      </div>
-      <div class="work-card">
-        <div class="ph ph--rooftop"><img src="images/work_sewage.jpg" class="ph__img" alt="하수관누수"></div>
-        <p>하수관누수</p>
-      </div>
-      <div class="work-card">
-        <div class="ph ph--insurance"><img src="images/work_insurance.jpg" class="ph__img" alt="누수 보험"></div>
-        <p>누수 보험</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 프로세스 -->
-<section class="process" id="process">
-  <div class="container container--wide">
-    <h2 class="section-title">프로세스</h2>
-    <p class="section-sub">전화 상담부터 사후관리까지, 단계별로 확실하게 진행합니다.</p>
-    <div class="zigzag">
-      <div class="zstep zstep--up">
-        <span class="zstep__badge zstep__badge--a">STEP 1</span>
-        <div class="zstep__card zstep__card--a">
-          <h3>고객 상담</h3>
-          <p>전화/카톡 상담 후 방문 일정 조율</p>
-          <img src="images/process_step1.jpg" class="zstep__icon" alt="고객과 상담하는 누수마스터 기사">
-        </div>
-      </div>
-      <div class="zstep__arrow" aria-hidden="true">➜</div>
-      <div class="zstep zstep--down">
-        <span class="zstep__badge zstep__badge--b">STEP 2</span>
-        <div class="zstep__card zstep__card--b">
-          <h3>현장 점검/진단</h3>
-          <p>정밀 장비로 누수 원인 정확 진단</p>
-          <img src="images/process_step2.jpg" class="zstep__icon" alt="배관 카메라 장비로 현장을 점검하는 모습">
-        </div>
-      </div>
-      <div class="zstep__arrow" aria-hidden="true">➜</div>
-      <div class="zstep zstep--up">
-        <span class="zstep__badge zstep__badge--a">STEP 3</span>
-        <div class="zstep__card zstep__card--a">
-          <h3>누수 문제해결</h3>
-          <p>진단 결과에 맞는 시공방법 즉시 대응</p>
-          <img src="images/process_step3.jpg" class="zstep__icon" alt="열화상 카메라로 누수 원인을 정확히 진단하는 모습">
-        </div>
-      </div>
-      <div class="zstep__arrow" aria-hidden="true">➜</div>
-      <div class="zstep zstep--down">
-        <span class="zstep__badge zstep__badge--b">STEP 4</span>
-        <div class="zstep__card zstep__card--b">
-          <h3>사후관리 및 A/S</h3>
-          <p>시공 이후에도 정기 점검 및 관리</p>
-          <img src="images/process_step4.jpg" class="zstep__icon" alt="사후관리 점검 결과를 함께 확인하는 모습">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 최고급 장비 -->
-<section class="equipment" id="equipment">
-  <div class="container equipment__inner">
-    <div class="equipment__text">
-      <h2 class="section-title section-title--left">최고급 장비로<br>보이지 않는 곳까지 세밀하게</h2>
-      <div class="ph ph--tools-flat">
-        <img src="images/equipment_flat.jpg" class="ph__img" alt="정밀 누수 진단용 전문 장비 플랫레이">
-      </div>
-    </div>
-    <div class="equipment__media">
-      <div class="ph ph--tools-case">
-        <img src="images/equipment_case.jpg" class="ph__img" alt="최고급 장비 케이스와 컴프레서 장비 세트">
-      </div>
-      <div class="ph ph--service-photo">
-        <img src="images/equipment_service.jpg" class="ph__img" alt="고객에게 압력 게이지 측정 결과를 설명하는 모습">
-        <p class="ph__caption">고객과의 소통을 통해<br>친절하게 수리합니다.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 실시간 작업 현황 -->
-<section class="stats" id="stats">
-  <div class="stats-carousel">
-    <div class="stats-carousel__side">
-      <!-- Top Tabs -->
-      <ul class="stats-carousel__tabs">
-        <li class="is-active">실시간 현황</li>
-        <li><a href="#reviews">고객 후기</a></li>
-        <li><a href="#quote">견적 문의</a></li>
-      </ul>
-      
-      <!-- Title & Description -->
-      <div class="stats-carousel__title-wrap">
-        <p class="stats-carousel__eyebrow">REAL-TIME STATUS</p>
-        <h2 class="stats-carousel__title">실시간<br>작업 현황</h2>
-        <p class="stats-carousel__desc">
-          누수마스터는 다양한 현장에서 최첨단 장비와 기술력으로 실시간 시공 현황을 투명하게 공유합니다.
-        </p>
-      </div>
-
-      <!-- Blue Box at bottom left -->
-      <div class="stats-carousel__blue-box">
-        <div class="stats-carousel__nav">
-          <button class="stats-carousel__arrow" id="statsPrev" aria-label="이전 항목">‹</button>
-          <button class="stats-carousel__arrow" id="statsNext" aria-label="다음 항목">›</button>
-        </div>
-        <div class="stats-carousel__progress">
-          <div class="stats-carousel__progress-bar" id="statsProgress" style="width: 20%;"></div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="stats-carousel__viewport" id="statsViewport">
-      <div class="stats-carousel__track" id="statsTrack"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 고객 후기 -->
-<section class="reviews" id="reviews">
-  <div class="container">
-    <h2 class="section-title">실제 고객들의 <span>생생한 후기</span></h2>
-    <p class="section-sub">정밀 탐지와 완벽한 마감으로 보답하는 누수마스터입니다.</p>
-    <div class="reviews-grid" id="reviewsGrid"></div>
-  </div>
-</section>
-
-<!-- 견적문의 -->
-<section class="quote" id="quote">
-  <div class="container">
-    <h2 class="quote__title">누수마스터 견적문의</h2>
-    <p class="quote__sub">접수 후 30분 이내로 직접 전화드립니다</p>
-
-    <form class="quote__form" id="quoteForm">
-      <div class="quote__form-col">
-        <label class="quote__field">
-          <span>이름</span>
-          <input type="text" name="name" required>
-        </label>
-        <label class="quote__field">
-          <span>연락처</span>
-          <input type="tel" name="phone" placeholder="010-0000-0000" required>
-        </label>
-        <label class="quote__field">
-          <span>상세 주소</span>
-          <input type="text" name="address">
-        </label>
-      </div>
-      <div class="quote__form-col">
-        <label class="quote__field">
-          <span>문의 종류</span>
-          <input type="text" name="type" placeholder="예) 수도관 누수">
-        </label>
-        <label class="quote__field quote__field--grow">
-          <span>문의 내용</span>
-          <textarea name="message" rows="4"></textarea>
-        </label>
-      </div>
-    </form>
-    <button type="submit" form="quoteForm" class="quote__submit">작성하기</button>
-    <p class="quote__notice" id="quoteNotice" aria-live="polite"></p>
-
-    <div class="area-search">
-      <div class="area-search__head">
-        <img src="images/logo.png" alt="" class="area-search__logo">
-        <div>
-          <p class="area-search__title">누수마스터</p>
-          <p class="area-search__title">방문 가능 지역 찾기</p>
-        </div>
-      </div>
-      <input type="text" class="area-search__input" id="areaSearchInput" placeholder="방문 가능 지역 검색하기" autocomplete="off">
-      <ul class="area-search__list" id="areaSearchList">
-        <li data-region="서울">서울</li>
-        <li data-region="경기">경기</li>
-        <li data-region="인천">인천</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer__top">
-      <div class="footer__logo-wrap">
-        <img src="images/logo.png" alt="누수마스터" class="footer__logo-img">
-      </div>
-      <nav class="footer__nav">
-        <a href="#">자주 묻는 질문</a>
-        <a href="#">가이드</a>
-        <a href="#">공지사항</a>
-        <a href="#">제휴문의</a>
-      </nav>
-    </div>
-
-    <div class="footer__info">
-      <div class="footer__info-col">
-        <p class="footer__info-title">(주) 누수마스터</p>
-        <p>사업자등록번호 : 000-00-00000 &nbsp;|&nbsp; 대표 : 홍길동</p>
-        <p>통신판매업 신고번호 : 0000-0000-0000</p>
-        <p>주소 : 주소를 입력해 주세요</p>
-        <p>이메일 : contact@nusumaster.com</p>
-      </div>
-      <div class="footer__info-col">
-        <p class="footer__info-title">고객센터</p>
-        <p>전화번호 : 010-2980-5679</p>
-        <p class="footer__info-title footer__info-title--spaced">운영시간</p>
-        <p>월-금 : 09:00 ~ 18:00</p>
-        <p>점심시간 : 12:00 ~ 13:00 (주말, 공휴일 제외)</p>
-      </div>
-    </div>
-
-    <div class="footer__bottom">
-      <div class="footer__legal">
-        <a href="#">이용약관</a>
-        <a href="#" class="footer__legal--strong">개인정보처리방침</a>
-        <a href="#">정보보호현황</a>
-      </div>
-      <span class="footer__copy">&copy; 2026 누수마스터. All rights reserved.</span>
-    </div>
-  </div>
-</footer>
-
-<!-- Floating buttons -->
-<div class="floating" id="floating-btns">
-  <a href="tel:010-2980-5679" class="floating__btn floating__btn--call" aria-label="전화 상담" id="float-call-btn">
-    <span class="float-icon">📞</span>
-    <span class="float-label">전화 상담</span>
-  </a>
-  <a href="http://pf.kakao.com/_xmxnxnx" class="floating__btn floating__btn--kakao" aria-label="카카오톡 상담" id="float-kakao-btn">
-    <span class="float-icon float-icon--talk">TALK</span>
-    <span class="float-label">카톡 상담</span>
-  </a>
-</div>
-
-<script src="js/main.js?v=3"></script>
+  <script src="js/main.js"></script>
+  <script src="js/event-tracking.js"></script>
 </body>
+
 </html>

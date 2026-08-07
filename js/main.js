@@ -1,221 +1,465 @@
-// Mobile nav toggle
-const navToggle = document.getElementById('navToggle');
-const nav = document.getElementById('nav');
-if (navToggle && nav) {
-  navToggle.addEventListener('click', () => {
-    nav.classList.toggle('nav--open');
-  });
-}
+/**
+ * 누수마스터 공식 웹사이트 JavaScript
+ */
 
-// Hero background slideshow (3초마다 자동 전환)
-const heroSlides = document.querySelectorAll('.hero__bg-slide');
-const heroDots = document.querySelectorAll('.hero__dots button');
-if (heroSlides.length) {
-  let heroIndex = 0;
-  const showHeroSlide = (i) => {
-    heroSlides.forEach((slide, idx) => slide.classList.toggle('is-active', idx === i));
-    heroDots.forEach((dot, idx) => dot.classList.toggle('is-active', idx === i));
-    heroIndex = i;
-  };
-  let heroTimer = setInterval(() => {
-    showHeroSlide((heroIndex + 1) % heroSlides.length);
-  }, 3000);
-  heroDots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      showHeroSlide(i);
-      clearInterval(heroTimer);
-      heroTimer = setInterval(() => {
-        showHeroSlide((heroIndex + 1) % heroSlides.length);
-      }, 3000);
+document.addEventListener('DOMContentLoaded', function() {
+    // 초기화
+    initHeader();
+    initHeroSlider();
+    initMobileMenu();
+    initScrollAnimations();
+    initCounterAnimation();
+    initCatchphraseAnimation();
+    initHeroScrollBtn();
+    initTopButton();
+    updateStatusDates();
+});
+
+/**
+ * 실시간 현황 날짜 자동 업데이트
+ */
+function updateStatusDates() {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    const formattedDate = `${yyyy}-${mm}-${dd}`;
+
+    document.querySelectorAll('.status-date').forEach(el => {
+        el.textContent = formattedDate;
     });
-  });
 }
 
-// 실시간 작업 현황 카드 (Figma/ mockup 스타일 캐러셀)
-const statsCardsData = [
-  {
-    title: '누수 탐지 및 공사',
-    desc: '지하 주차장 천장 누수를 정확하게 탐지하여 배관 고압 시공 및 마감을 확실하게 완료했습니다.',
-    image: 'images/work_leak.jpg',
-    theme: 'dark',
-    tags: ['고압 펌프', '배관 카메라', '보수 완료']
-  },
-  {
-    title: '수도관 누수 복원',
-    desc: '아파트 욕실 벽면 내부 수도관의 미세 균열을 탐지하고, 노후 배관을 새 동관으로 전면 교체하였습니다.',
-    image: 'images/work_pipe.jpg',
-    theme: 'light',
-    tags: ['청음식 탐지', '배관 교체', '타일 복원']
-  },
-  {
-    title: '보일러 분배기 교체',
-    desc: '단독주택 보일러실 배관 분배기 밸브에서의 미세 누수를 감지하여 특수 밸브로 교체 후 열화상 검증을 마쳤습니다.',
-    image: 'images/work_boiler.jpg',
-    theme: 'dark',
-    tags: ['가스 탐지', '분배기 교체', '열화상 검증']
-  },
-  {
-    title: '하수관 누수 정밀 보수',
-    desc: '빌라 공동 하수관 연결 부위의 미세한 틈새 누수를 초정밀 배관 카메라로 탐색하여 특수 방수 실링 처리했습니다.',
-    image: 'images/work_sewage.jpg',
-    theme: 'light',
-    tags: ['내시경 카메라', '방수 실링', '부분 보수']
-  },
-  {
-    title: '일상생활배상책임 보험공사',
-    desc: '아래층 누수 피해 보상과 공사비를 보험 적용하여 복잡한 서류 작업 대행과 함께 비용 부담 없이 진행 완료했습니다.',
-    image: 'images/work_insurance.jpg',
-    theme: 'dark',
-    tags: ['보험 서류 대행', '손해 방지', '부담금 최소화']
-  }
-];
+/**
+ * 헤더 스크롤 효과
+ */
+function initHeader() {
+    const header = document.getElementById('header');
 
-const statsTrack = document.getElementById('statsTrack');
-if (statsTrack) {
-  statsTrack.innerHTML = statsCardsData.map(card => {
-    if (card.theme === 'dark') {
-      return `
-        <div class="stats-card stats-card--dark">
-          <div class="stats-card__content">
-            <h3 class="stats-card__title">${card.title}</h3>
-            <p class="stats-card__desc">${card.desc}</p>
-          </div>
-          <div class="stats-card__media">
-            <img src="${card.image}" alt="${card.title}" class="stats-card__img">
-          </div>
-          <div class="stats-card__overlay">
-            <div class="stats-card__tags">
-              ${card.tags.map(t => `<span>${t}</span>`).join('')}
-            </div>
-            <button class="stats-card__plus" aria-label="상세보기">+</button>
-          </div>
-        </div>
-      `;
-    } else {
-      return `
-        <div class="stats-card stats-card--light">
-          <div class="stats-card__content">
-            <h3 class="stats-card__title">${card.title}</h3>
-            <p class="stats-card__desc">${card.desc}</p>
-          </div>
-          <div class="stats-card__media">
-            <img src="${card.image}" alt="${card.title}" class="stats-card__img">
-          </div>
-          <div class="stats-card__bottom">
-            <div class="stats-card__tags">
-              ${card.tags.map(t => `<span>${t}</span>`).join('')}
-            </div>
-            <button class="stats-card__plus" aria-label="상세보기">+</button>
-          </div>
-        </div>
-      `;
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
-  }).join('');
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // 초기 상태 체크
 }
 
-const statsViewport = document.getElementById('statsViewport');
-const statsProgress = document.getElementById('statsProgress');
+/**
+ * 히어로 슬라이더
+ */
+function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-pagination .dot');
+    let currentSlide = 0;
+    const slideInterval = 5000; // 5초
+    let autoSlideTimer;
 
-if (statsViewport && statsTrack) {
-  // Update progress bar
-  const updateProgress = () => {
-    if (statsProgress) {
-      const maxScroll = statsViewport.scrollWidth - statsViewport.clientWidth;
-      const progress = maxScroll > 0 ? (statsViewport.scrollLeft / maxScroll) * 100 : 0;
-      statsProgress.style.width = `${Math.min(100, Math.max(15, progress))}%`;
+    function goToSlide(index) {
+        // 현재 슬라이드 비활성화
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        // 새 슬라이드 활성화
+        currentSlide = index;
+        if (currentSlide >= slides.length) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = slides.length - 1;
+
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
     }
-  };
 
-  statsViewport.addEventListener('scroll', updateProgress);
-  window.addEventListener('resize', updateProgress);
-
-  const statsPrev = document.getElementById('statsPrev');
-  const statsNext = document.getElementById('statsNext');
-  if (statsPrev) statsPrev.addEventListener('click', () => statsViewport.scrollBy({ left: -360, behavior: 'smooth' }));
-  if (statsNext) statsNext.addEventListener('click', () => statsViewport.scrollBy({ left: 360, behavior: 'smooth' }));
-}
-
-// Reviews (Mockup layout style grid)
-const reviewsData = [
-  {
-    image: 'images/diff_visit.jpg',
-    title: '아파트 배관 미세 누수 해결',
-    text: '누수 원인을 정확하게 찾아주시고, 복잡한 탐지 장비와 시공 과정도 친절하고 꼼꼼하게 설명해 주셔서 깊은 믿음이 갔습니다.',
-    btnText: '후기 상세보기'
-  },
-  {
-    image: 'images/equipment_service.jpg',
-    title: '보일러 배관 누수 원스톱 시공',
-    text: '보일러 배관 물샘 문제로 큰 고생을 했는데 신속히 방문해 주셔서 원인 파악부터 공사까지 하루 만에 깔끔하게 해결해 주셨어요.',
-    btnText: '후기 상세보기'
-  },
-  {
-    image: 'images/service_duo.jpg',
-    title: '아래층 천장 물 얼룩 마감 보수',
-    text: '방문부터 시공, 사후 A/S 보장까지 전 과정을 책임지고 친절하게 진행해 주셔서 매우 만족스럽고 이웃 간의 갈등도 잘 풀렸습니다.',
-    btnText: '후기 상세보기'
-  }
-];
-
-const reviewsGrid = document.getElementById('reviewsGrid');
-if (reviewsGrid) {
-  reviewsGrid.innerHTML = reviewsData.map(r => `
-    <div class="review-card">
-      <div class="review-card__media">
-        <img src="${r.image}" alt="${r.title}" class="review-card__img">
-      </div>
-      <div class="review-card__body">
-        <h3 class="review-card__title">${r.title}</h3>
-        <p class="review-card__stars">★★★★★</p>
-        <p class="review-card__text">${r.text}</p>
-        <a href="#contact" class="review-card__btn">${r.btnText}</a>
-      </div>
-    </div>
-  `).join('');
-}
-
-// 견적문의 폼 (현재는 백엔드 연동 없이 화면 안내만 제공)
-const quoteForm = document.getElementById('quoteForm');
-const quoteNotice = document.getElementById('quoteNotice');
-if (quoteForm && quoteNotice) {
-  quoteForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    quoteNotice.textContent = '문의가 접수되었습니다. 빠르게 연락드리겠습니다.';
-    quoteForm.reset();
-  });
-}
-
-// 방문 가능 지역 찾기 검색
-const areaInput = document.getElementById('areaSearchInput');
-const areaList = document.getElementById('areaSearchList');
-if (areaInput && areaList) {
-  const areaItems = Array.from(areaList.querySelectorAll('li'));
-  
-  // Show list on input focus
-  areaInput.addEventListener('focus', () => {
-    areaList.style.display = 'block';
-  });
-
-  // Hide list when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!areaInput.contains(e.target) && !areaList.contains(e.target)) {
-      areaList.style.display = 'none';
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
     }
-  });
 
-  areaInput.addEventListener('input', () => {
-    const keyword = areaInput.value.trim();
-    areaItems.forEach(li => {
-      const match = !keyword || li.dataset.region.includes(keyword);
-      li.classList.toggle('is-hidden', !match);
+    function startAutoSlide() {
+        autoSlideTimer = setInterval(nextSlide, slideInterval);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideTimer);
+        startAutoSlide();
+    }
+
+    // 닷 클릭 이벤트
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+            resetAutoSlide();
+        });
     });
-  });
 
-  areaItems.forEach(li => {
-    li.addEventListener('click', () => {
-      areaInput.value = li.dataset.region;
-      areaList.style.display = 'none';
-      areaItems.forEach(item => item.classList.remove('is-hidden'));
-    });
-  });
+    // 자동 슬라이드 시작
+    startAutoSlide();
 }
+
+/**
+ * 모바일 메뉴
+ */
+function initMobileMenu() {
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const nav = document.getElementById('nav');
+    const navLinks = document.querySelectorAll('.nav-list a');
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+    if (!menuBtn || !nav) return;
+
+    menuBtn.addEventListener('click', function() {
+        menuBtn.classList.toggle('active');
+        nav.classList.toggle('active');
+        document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // 모바일 드롭다운 토글 (모든 드롭다운에 적용)
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('a');
+        if (toggle) {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    // 다른 드롭다운 닫기
+                    dropdowns.forEach(d => {
+                        if (d !== dropdown) d.classList.remove('active');
+                    });
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    });
+
+    // 네비게이션 링크 클릭 시 메뉴 닫기 (드롭다운 토글 제외)
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // 드롭다운 부모를 가진 링크는 메뉴 닫기 제외
+            if (link.parentElement.classList.contains('nav-dropdown') && window.innerWidth <= 768) {
+                return;
+            }
+            menuBtn.classList.remove('active');
+            nav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+}
+
+/**
+ * 스크롤 애니메이션 (AOS 대체)
+ */
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('[data-aos]');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = entry.target.getAttribute('data-aos-delay') || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('aos-animate');
+                }, delay);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+}
+
+/**
+ * 카운터 애니메이션
+ */
+function initCounterAnimation() {
+    const counters = document.querySelectorAll('.counter');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+}
+
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const duration = 2000; // 2초
+    const step = target / (duration / 16); // 60fps 기준
+    let current = 0;
+
+    function updateCounter() {
+        current += step;
+        if (current < target) {
+            element.textContent = Math.floor(current).toLocaleString();
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target.toLocaleString();
+        }
+    }
+
+    updateCounter();
+}
+
+/**
+ * 캐치프레이즈 애니메이션 — 순차 실행 (아이템→구분선→아이템→구분선→아이템)
+ */
+function initCatchphraseAnimation() {
+    var section = document.getElementById('catchphrase');
+    if (!section) return;
+
+    var headline = section.querySelector('.catchphrase-headline');
+    var subheadline = section.querySelector('.catchphrase-subheadline');
+    var items = section.querySelectorAll('.catchphrase-item');
+    var dividers = section.querySelectorAll('.catchphrase-divider');
+
+    // 순차 실행: 제목 즉시 → 부제 페이드인 → 아이템3개 (구분선은 즉시 표시)
+    var steps = [];
+    if (subheadline) steps.push({ type: 'subheadline', el: subheadline });
+    items.forEach(function(item) {
+        steps.push({ type: 'item', el: item });
+    });
+
+    function runSequence() {
+        // 제목, 구분선은 즉시 표시
+        if (headline) headline.classList.add('active');
+        dividers.forEach(function(d) { d.classList.add('active'); });
+
+        var delay = 0;
+        steps.forEach(function(step) {
+            setTimeout(function() {
+                step.el.classList.add('active');
+            }, delay);
+
+            // 부제 300ms, 아이템 300ms 간격
+            delay += 300;
+        });
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                runSequence();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(section);
+}
+
+
+/**
+ * 히어로 스크롤 버튼 — 네비바 높이 고려하여 캐치프레이즈로 이동
+ */
+function initHeroScrollBtn() {
+    var btn = document.querySelector('.hero-scroll-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.getElementById('catchphrase');
+        if (!target) return;
+
+        var header = document.querySelector('.header');
+        var headerHeight = header ? header.offsetHeight : 0;
+        var dest = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+        smoothScrollTo(dest, 1000);
+    });
+}
+
+/**
+ * 커스텀 스무스 스크롤 (duration ms)
+ */
+function smoothScrollTo(to, duration) {
+    var start = window.pageYOffset;
+    var diff = to - start;
+    var startTime = null;
+
+    function step(time) {
+        if (!startTime) startTime = time;
+        var progress = Math.min((time - startTime) / duration, 1);
+        var ease = progress < 0.5
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        window.scrollTo(0, start + diff * ease);
+        if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+}
+
+/**
+ * TOP 버튼
+ */
+function initTopButton() {
+    const topBtn = document.getElementById('topBtn');
+
+    if (!topBtn) return;
+
+    topBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 스크롤 위치에 따라 버튼 표시/숨김
+    function handleTopButtonVisibility() {
+        const floatingButtons = document.querySelector('.floating-buttons');
+        if (window.scrollY > 500) {
+            floatingButtons.style.opacity = '1';
+            floatingButtons.style.visibility = 'visible';
+        } else {
+            floatingButtons.style.opacity = '0.7';
+        }
+    }
+
+    window.addEventListener('scroll', handleTopButtonVisibility);
+}
+
+/**
+ * 부드러운 스크롤 (네비게이션 링크)
+ */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        // 모바일 메뉴가 닫힐 시간 대기
+        setTimeout(() => {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerOffset = 70;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
+    });
+});
+
+/**
+ * 이미지 지연 로딩
+ */
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+
+/**
+ * 실시간 작업 현황 시뮬레이션 (선택적)
+ */
+function simulateRealtimeStatus() {
+    const statusList = document.querySelector('.status-list');
+    if (!statusList) return;
+
+    const locations = [
+        '서울 강남', '서울 송파', '경기 수원', '경기 성남',
+        '인천 부평', '부산 해운대', '대구 수성', '광주 서구'
+    ];
+
+    const names = ['김O수', '이O희', '박O진', '최O영', '정O민'];
+    const types = [
+        { type: 'leak', label: '누수' },
+        { type: 'sewer', label: '하수' }
+    ];
+
+    // 5분마다 상태 업데이트 (데모용)
+    setInterval(() => {
+        const items = statusList.querySelectorAll('.status-item');
+        items.forEach(item => {
+            const stateEl = item.querySelector('.status-state');
+            if (stateEl.classList.contains('dispatch')) {
+                stateEl.classList.remove('dispatch');
+                stateEl.classList.add('complete');
+                stateEl.textContent = '작업완료';
+            }
+        });
+    }, 300000);
+}
+
+// ===== 행정동 아코디언 토글 =====
+document.querySelectorAll('.district-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var group = this.closest('.district-group');
+        var isActive = group.classList.contains('active');
+        group.classList.toggle('active');
+        this.setAttribute('aria-expanded', !isActive);
+    });
+});
+
+// ===== 지역 검색 위젯 =====
+document.querySelectorAll('.district-search input[type="text"]').forEach(function(input) {
+    var resultEl = input.parentElement.querySelector('.search-result');
+    var datalistId = input.getAttribute('list');
+    var datalist = document.getElementById(datalistId);
+    if (!resultEl || !datalist) return;
+
+    var options = Array.from(datalist.querySelectorAll('option')).map(function(opt) {
+        return opt.value;
+    });
+
+    input.addEventListener('input', function() {
+        var val = this.value.trim();
+        if (!val) {
+            resultEl.textContent = '';
+            resultEl.className = 'search-result';
+            return;
+        }
+        var match = options.some(function(opt) {
+            return opt.indexOf(val) !== -1;
+        });
+        if (match) {
+            resultEl.textContent = '서비스 가능 지역입니다! 지금 바로 상담하세요.';
+            resultEl.className = 'search-result found';
+        } else {
+            resultEl.textContent = '검색 결과가 없습니다. 전화 상담을 이용해주세요.';
+            resultEl.className = 'search-result not-found';
+        }
+    });
+});
+
+// 페이지 로드 완료 후 추가 초기화
+window.addEventListener('load', function() {
+    initLazyLoading();
+    // simulateRealtimeStatus(); // 필요시 활성화
+});
