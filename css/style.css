@@ -125,7 +125,7 @@ img {
 
 .header.scrolled .logo-text,
 .header-sub .logo-text {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .logo-text-img {
