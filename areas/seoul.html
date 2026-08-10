@@ -961,7 +961,7 @@
     <header class="header" id="header">
         <div class="header-inner">
             <a href="/" class="logo">
-                <img src="../images/logo.png" alt="누수마스터 로고">
+                <img src="../images/logo-character.png" alt="누수마스터 로고">
                 <img src="../images/logo_text_W.png" alt="누수마스터" class="logo-text-img logo-text-white">
                 <img src="../images/logo_text.png" alt="누수마스터" class="logo-text-img logo-text-dark" style="display: none;">
             </a>
@@ -1053,16 +1053,6 @@
         <p class="catchphrase-headline">누수 비용 때문에 망설이고 계세요?</p>
         <p class="catchphrase-subheadline">걱정마세요, 누수마스터는 다릅니다.</p>
         <div class="catchphrase-inner">
-            <!-- SVG 연결선 (S자 곡선) -->
-            <svg class="catchphrase-flow-svg catchphrase-divider" viewBox="0 0 1000 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="flow-path path-1" d="M 258 72 A 125 125 0 1 0 258 248 C 300 290, 370 206, 412 248" stroke="#6366f1" stroke-width="5" stroke-linecap="round" fill="none"/>
-                <path class="flow-path path-2" d="M 412 248 A 125 125 0 1 1 588 72 C 630 30, 700 114, 742 72" stroke="#10b981" stroke-width="5" stroke-linecap="round" fill="none"/>
-                <path class="flow-path path-3" d="M 742 72 A 125 125 0 1 0 742 248" stroke="#f43f5e" stroke-width="5" stroke-linecap="round" fill="none"/>
-                <circle cx="258" cy="72" r="7" fill="#6366f1" />
-                <circle cx="412" cy="248" r="7" fill="#10b981" />
-                <circle cx="742" cy="248" r="7" fill="#f43f5e" />
-            </svg>
-
             <!-- Step 01 카드 (출장비) -->
             <div class="catchphrase-item step-1">
                 <div class="card-circle">
@@ -1076,6 +1066,8 @@
                 </div>
             </div>
 
+            <div class="catchphrase-connector" aria-hidden="true"></div>
+
             <!-- Step 02 카드 (무상 A/S) -->
             <div class="catchphrase-item step-2">
                 <div class="card-circle">
@@ -1088,6 +1080,8 @@
                     <span class="catchphrase-value" data-count="1" data-suffix="년">1년</span>
                 </div>
             </div>
+
+            <div class="catchphrase-connector" aria-hidden="true"></div>
 
             <!-- Step 03 카드 (미해결) -->
             <div class="catchphrase-item step-3">
@@ -1218,34 +1212,74 @@
     <section class="process" id="process">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">프로세스</h2>
-            <div class="process-timeline">
-                <div class="timeline-track"></div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
-                    <div class="timeline-node"><span class="node-number">1</span></div>
-                    <div class="timeline-content">
-                        <h4>고객 상담</h4>
-                        <p>전문가와 상담 후<br>방문 일정 조율</p>
+            <div class="process-timeline-v2">
+                <div class="timeline-v2-line"></div>
+
+                <!-- Step 1 -->
+                <div class="timeline-v2-item step-1" data-aos="fade-up" data-aos-delay="0">
+                    <div class="timeline-v2-indicator">
+                        <div class="timeline-v2-circle">
+                            <svg class="circle-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="timeline-v2-right">
+                        <div class="timeline-v2-text">
+                            <h4 class="timeline-v2-title">고객 상담</h4>
+                            <p class="timeline-v2-desc">전문가와 상담 후<br>방문 일정 조율</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline-node"><span class="node-number">2</span></div>
-                    <div class="timeline-content">
-                        <h4>현장<br class="mobile-br"> 점검/진단</h4>
-                        <p>방문 후 문제를<br>점검 후 안내</p>
+
+                <!-- Step 2 -->
+                <div class="timeline-v2-item step-2" data-aos="fade-up" data-aos-delay="150">
+                    <div class="timeline-v2-indicator">
+                        <div class="timeline-v2-circle">
+                            <svg class="circle-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="timeline-v2-right">
+                        <div class="timeline-v2-text">
+                            <h4 class="timeline-v2-title">현장 점검/진단</h4>
+                            <p class="timeline-v2-desc">방문 후 문제를<br>점검 후 안내</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                    <div class="timeline-node"><span class="node-number">3</span></div>
-                    <div class="timeline-content">
-                        <h4>누수<br class="mobile-br"> 문제해결</h4>
-                        <p>현장상황에 맞는<br>시공방법을 통해 해결</p>
+
+                <!-- Step 3 -->
+                <div class="timeline-v2-item step-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-v2-indicator">
+                        <div class="timeline-v2-circle">
+                            <svg class="circle-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="timeline-v2-right">
+                        <div class="timeline-v2-text">
+                            <h4 class="timeline-v2-title">누수 문제해결</h4>
+                            <p class="timeline-v2-desc">현장상황에 맞는<br>시공방법을 통해 해결</p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="600">
-                    <div class="timeline-node dark"><span class="node-number">4</span></div>
-                    <div class="timeline-content">
-                        <h4>사후관리<br class="mobile-br"> 및 A/S</h4>
-                        <p>시공 마무리 후<br>관리 Tip 및 A/S 안내</p>
+
+                <!-- Step 4 -->
+                <div class="timeline-v2-item step-4" data-aos="fade-up" data-aos-delay="450">
+                    <div class="timeline-v2-indicator">
+                        <div class="timeline-v2-circle">
+                            <svg class="circle-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="timeline-v2-right">
+                        <div class="timeline-v2-text">
+                            <h4 class="timeline-v2-title">사후관리 및 A/S</h4>
+                            <p class="timeline-v2-desc">시공 마무리 후<br>관리 Tip 및 A/S 안내</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1412,7 +1446,7 @@
         <div class="container">
             <div class="cta-wrapper">
                 <div class="cta-image" data-aos="fade-right">
-                    <img src="../images/logo.png" alt="누수마스터 로고" loading="lazy">
+                    <img src="../images/logo-character.png" alt="누수마스터 캐릭터 로고" loading="lazy">
                 </div>
                 <div class="cta-content" data-aos="fade-left">
                     <h2>서울 지역 365일 간편 상담</h2>
@@ -1430,7 +1464,7 @@
             </div>
         </div>
         <div class="cta-phone-banner">
-            <p>서울 아파트·빌라·주택 누수 무료상담 <span class="phone-number">010-2980-5679</span></p>
+            <p>무료상담 <span class="phone-number">010-2980-5679</span></p>
         </div>
     </section>
 
