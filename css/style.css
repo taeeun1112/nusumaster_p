@@ -931,6 +931,7 @@ section {
     object-fit: cover;
     transition: var(--transition);
     border-radius: var(--border-radius);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .allinone-image:hover img {
