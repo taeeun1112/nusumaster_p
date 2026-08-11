@@ -864,7 +864,7 @@ section {
 }
 
 .allinone-item h3 {
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 800;
     color: var(--primary-color);
     margin-bottom: 20px;
@@ -897,8 +897,8 @@ section {
 }
 
 .allinone-item p {
-    font-size: 21px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 500;
     color: var(--text-color);
     line-height: 2;
 }
@@ -910,33 +910,19 @@ section {
 }
 
 .allinone-image::before {
-    content: '';
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    width: 100%;
-    height: 100%;
-    background: var(--primary-color);
-    border-radius: var(--border-radius);
-    z-index: -1;
-    opacity: 0.15;
-    transition: var(--transition);
+    content: none;
 }
 
 .allinone-row.reverse .allinone-image::before {
-    left: auto;
-    right: 12px;
+    content: none;
 }
 
 .allinone-image:hover::before {
-    top: 8px;
-    left: 8px;
-    opacity: 0.25;
+    content: none;
 }
 
 .allinone-row.reverse .allinone-image:hover::before {
-    left: auto;
-    right: 8px;
+    content: none;
 }
 
 .allinone-image img {
@@ -945,7 +931,6 @@ section {
     object-fit: cover;
     transition: var(--transition);
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-lg);
 }
 
 .allinone-image:hover img {
