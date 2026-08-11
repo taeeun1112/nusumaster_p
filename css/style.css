@@ -49,7 +49,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -335,9 +335,9 @@ img {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1360px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 24px;
     padding-top: 30vh;
 }
 
@@ -1693,10 +1693,10 @@ section {
 
 .timeline-v2-line {
     position: absolute;
-    top: 42.5px;
+    top: 62.5px;
     left: 40px;
     right: 40px;
-    height: 2px;
+    height: 3px;
     background: #e2e8f0;
     z-index: 1;
 }
@@ -1780,7 +1780,7 @@ section {
 /* 설명 텍스트 그룹 (텍스트 카드화) */
 .timeline-v2-text {
     position: relative;
-    padding: 20px 24px;
+    padding: 24px 24px 22px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -1798,16 +1798,32 @@ section {
 }
 
 .timeline-v2-title {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 800;
     color: #111111;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.timeline-v2-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    opacity: 0.85;
 }
 
 .timeline-v2-desc {
-    font-size: 18px;
+    font-size: 16px;
     color: #4a5568;
-    line-height: 1.7;
+    line-height: 1.65;
 }
 
 .timeline-v2-right {
@@ -2063,7 +2079,7 @@ section {
 }
 
 .service-card.grayscale:hover .service-image img {
-    filter: grayscale(50%);
+    filter: grayscale(100%);
 }
 
 .service-card {
@@ -2085,7 +2101,12 @@ section {
 }
 
 .service-card-info {
-    padding: 30px 25px 20px;
+    padding: 24px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
 }
 
 .service-image {
@@ -2107,30 +2128,32 @@ section {
 
 .service-card:hover .service-image img {
     transform: scale(1.05);
-    filter: grayscale(0%);
+    filter: grayscale(100%);
 }
 
 .service-card h3 {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
     margin-bottom: 12px;
     color: var(--primary-color);
     text-align: center;
+    line-height: 1.2;
 }
 
 .service-card p {
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 500;
     color: var(--text-light);
     line-height: 1.6;
     margin: 0;
     text-align: center;
+    word-break: keep-all;
 }
 
 /* ===== 고객 후기 섹션 ===== */
 .reviews {
     background: var(--bg-light);
-    padding-bottom: 80px;
+    padding-bottom: 160px;
 }
 
 .reviews-wrapper {
@@ -2367,7 +2390,7 @@ section {
 /* ===== CTA 섹션 ===== */
 .cta-section {
     background: linear-gradient(180deg, var(--bg-light) 75%, #0056ad 75%);
-    padding: 60px 0 0;
+    padding: 100px 0 0;
 }
 
 .cta-wrapper {
