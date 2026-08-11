@@ -149,7 +149,6 @@
           <li class="nav-dropdown">
             <a href="#">지역별 안내</a>
             <ul class="dropdown-menu">
-              <li><a href="areas/seoul.html">서울</a></li>
               <li><a href="areas/gyeonggi.html">경기</a></li>
               <li><a href="areas/incheon.html">인천</a></li>
             </ul>
@@ -203,6 +202,9 @@
         <p class="hero-desc hero-desc-desktop"><span class="hero-accent">보험처리</span>로 비용 걱정 없이 누수·아래층 피해까지 즉시 해결</p>
         <p class="hero-desc hero-desc-mobile"><span class="hero-accent">보험처리</span>로 비용 걱정 없이 누수 문제 즉시 해결</p>
         <a href="tel:010-2980-5679" class="hero-btn primary">
+          <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 22px; height: 22px; margin-right: 8px; vertical-align: middle;">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
           상담문의 010-2980-5679
         </a>
       </div>
@@ -243,31 +245,31 @@
 
       <div class="catchphrase-connector" aria-hidden="true"></div>
 
-      <!-- Step 02 카드 (무상 A/S) -->
+      <!-- Step 02 카드 (미해결) -->
       <div class="catchphrase-item step-2">
         <div class="card-circle">
           <svg class="catchphrase-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
           </svg>
           <span class="step-num">Step 02</span>
-          <span class="catchphrase-label">무상 A/S 1년</span>
-          <span class="catchphrase-desc">시공 후 문제 발생 시<br>1년간 무상 수리를 보장합니다.</span>
-          <span class="catchphrase-value" data-count="1" data-suffix="년">1년</span>
+          <span class="catchphrase-label">미해결 0원</span>
+          <span class="catchphrase-desc">누수 해결 실패 시<br>시공 비용은 0원입니다.</span>
+          <span class="catchphrase-value" data-count="0" data-suffix="원">0원</span>
         </div>
       </div>
 
       <div class="catchphrase-connector" aria-hidden="true"></div>
 
-      <!-- Step 03 카드 (미해결) -->
+      <!-- Step 03 카드 (무상 A/S) -->
       <div class="catchphrase-item step-3">
         <div class="card-circle">
           <svg class="catchphrase-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
           </svg>
           <span class="step-num">Step 03</span>
-          <span class="catchphrase-label">미해결 0원</span>
-          <span class="catchphrase-desc">누수 해결 실패 시<br>시공 비용은 0원입니다.</span>
-          <span class="catchphrase-value" data-count="0" data-suffix="원">0원</span>
+          <span class="catchphrase-label">무상 A/S 1년</span>
+          <span class="catchphrase-desc">시공 후 문제 발생 시<br>1년간 무상 수리를 보장합니다.</span>
+          <span class="catchphrase-value" data-count="1" data-suffix="년">1년</span>
         </div>
       </div>
     </div>
@@ -316,36 +318,42 @@
   <section class="services" id="services">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">시공영역</h2>
-      <div class="services-grid services-grid-5">
+      <div class="services-grid">
         <a href="services/leak-detection.html" class="service-card" data-aos="fade-up" data-aos-delay="50">
           <div class="service-image">
             <img src="images/page3/3-1.png" alt="누수 공사" loading="lazy">
           </div>
-          <h3>누수 공사</h3>
+          <div class="service-card-info">
+            <h3>누수 공사</h3>
+            <p>최첨단 탐지 장비를 활용하여 미세한 누수 지점까지 정확하게 찾아내고 재발 없는 완벽한 시공을 보장합니다.</p>
+          </div>
         </a>
         <a href="services/water-pipe.html" class="service-card" data-aos="fade-up" data-aos-delay="100">
           <div class="service-image">
             <img src="images/page3/3-2.png" alt="수도관 누수" loading="lazy">
           </div>
-          <h3>수도관 누수</h3>
+          <div class="service-card-info">
+            <h3>수도관 누수</h3>
+            <p>벽체 및 바닥 매립 배관의 노후화로 인한 누수를 정밀 진단하고 손상 부위 보수 및 배관 교체 공사를 진행합니다.</p>
+          </div>
         </a>
         <a href="services/boiler-pipe.html" class="service-card" data-aos="fade-up" data-aos-delay="150">
           <div class="service-image">
             <img src="images/page3/3-3.png" alt="보일러관 누수" loading="lazy">
           </div>
-          <h3>보일러관 누수</h3>
+          <div class="service-card-info">
+            <h3>보일러관 누수</h3>
+            <p>분배기 및 바닥 난방 배관의 누수를 신속하게 탐색하여 불필요한 열 손실을 방지하고 난방 기능을 회복합니다.</p>
+          </div>
         </a>
         <a href="services/sewer.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
           <div class="service-image">
             <img src="images/page3/3-4.png" alt="하수관 누수" loading="lazy">
           </div>
-          <h3>하수관 누수</h3>
-        </a>
-        <a href="services/insurance.html" class="service-card" data-aos="fade-up" data-aos-delay="250">
-          <div class="service-image">
-            <img src="images/page3/3-5.png" alt="누수 보험" loading="lazy">
+          <div class="service-card-info">
+            <h3>하수관 누수</h3>
+            <p>욕실, 베란다 등의 하수구 배관 균열이나 유가 주변 방수층 손상으로 아래층 천장에 번지는 누수를 차단합니다.</p>
           </div>
-          <h3>누수 보험</h3>
         </a>
       </div>
     </div>
@@ -428,23 +436,25 @@
         </div>
       </div>
       <div class="equipment-section" data-aos="fade-up">
-        <div class="equipment-layout">
-          <div class="equipment-left">
-            <div class="equipment-text">
-              <h3>최고급 장비로<br><span class="highlight">보이지 않는 곳까지 세밀하게</span></h3>
-            </div>
-            <div class="equipment-image">
+        <div class="equipment-row top-row">
+          <div class="equipment-text-block">
+            <h3>최고급 장비로<br><span class="highlight">보이지 않는 곳까지 세밀하게</span></h3>
+          </div>
+          <div class="equipment-images-block">
+            <div class="equipment-image-wrapper">
               <img src="images/page5/5-1.webp" alt="전문 장비" loading="lazy">
             </div>
-          </div>
-          <div class="equipment-right">
-            <div class="equipment-image">
+            <div class="equipment-image-wrapper">
               <img src="images/page5/5-2.webp" alt="작업 도구" loading="lazy">
             </div>
-            <div class="equipment-image">
-              <img src="images/page5/5-3.webp" alt="고객 소통" loading="lazy">
-              <span class="equipment-caption">고객과의 소통을 통해<br>원활하게 수리합니다.</span>
-            </div>
+          </div>
+        </div>
+        <div class="equipment-row bottom-row">
+          <div class="equipment-single-image-block">
+            <img src="images/page5/5-3.webp" alt="고객 소통" loading="lazy">
+          </div>
+          <div class="equipment-text-block">
+            <h3><span class="highlight">고객과의 소통을 통해<br>원활하게 수리합니다.</span></h3>
           </div>
         </div>
       </div>
@@ -578,7 +588,9 @@
           <h3>월 <span class="highlight-number">270건</span> 이상 작업</h3>
           <p class="summary-subtitle">서비스 이용 만족도</p>
           <div class="summary-rating">
-            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <div class="stars-outer">
+              <div class="stars-inner"></div>
+            </div>
             <span class="rating-number">5.0점</span>
           </div>
           <p class="summary-slogan">고객님의 신뢰가 저희의 자부심입니다</p>
@@ -635,23 +647,11 @@
         </div>
         <div class="footer-links">
           <p><strong>서비스 지역</strong></p>
-          <p><a href="areas/seoul.html">서울</a> | <a href="areas/gyeonggi.html">경기</a> | <a
-              href="areas/incheon.html">인천</a></p>
+          <p><a href="areas/gyeonggi.html">경기</a> | <a href="areas/incheon.html">인천</a></p>
           <p style="margin-top: 10px;"><a href="faq.html">자주 묻는 질문</a></p>
         </div>
       </div>
       <div class="footer-areas">
-        <p><strong>서울</strong>: <a href="/areas/seoul.html">강남구</a> · <a href="/areas/seoul.html">서초구</a> · <a
-            href="/areas/seoul.html">송파구</a> · <a href="/areas/seoul.html">강동구</a> · <a href="/areas/seoul.html">마포구</a>
-          · <a href="/areas/seoul.html">용산구</a> · <a href="/areas/seoul.html">영등포구</a> · <a
-            href="/areas/seoul.html">관악구</a> · <a href="/areas/seoul.html">동작구</a> · <a href="/areas/seoul.html">강서구</a>
-          · <a href="/areas/seoul.html">양천구</a> · <a href="/areas/seoul.html">성동구</a> · <a
-            href="/areas/seoul.html">광진구</a> · <a href="/areas/seoul.html">동대문구</a> · <a
-            href="/areas/seoul.html">성북구</a> · <a href="/areas/seoul.html">노원구</a> · <a href="/areas/seoul.html">강북구</a>
-          · <a href="/areas/seoul.html">도봉구</a> · <a href="/areas/seoul.html">구로구</a> · <a
-            href="/areas/seoul.html">금천구</a> · <a href="/areas/seoul.html">은평구</a> · <a
-            href="/areas/seoul.html">서대문구</a> · <a href="/areas/seoul.html">종로구</a> · <a href="/areas/seoul.html">중구</a>
-          · <a href="/areas/seoul.html">중랑구</a></p>
         <p><strong>경기</strong>: <a href="/areas/gyeonggi.html">수원</a> · <a href="/areas/gyeonggi.html">성남</a> · <a
             href="/areas/gyeonggi.html">용인</a> · <a href="/areas/gyeonggi.html">화성</a> · <a
             href="/areas/gyeonggi.html">고양시</a> · <a href="/areas/gyeonggi.html">부천</a> · <a
