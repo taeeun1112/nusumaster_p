@@ -1350,11 +1350,11 @@ section {
 
 /* 장비 섹션 */
 .equipment-section {
-    margin-top: 120px;
-    padding-top: 60px;
+    margin-top: 180px;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
-    gap: 70px;
+    gap: 100px;
 }
 
 .equipment-row {
