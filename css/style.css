@@ -335,16 +335,17 @@ img {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1360px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 24px;
-    padding-top: 30vh;
+    padding: 0 16px;
+    padding-top: 36vh;
 }
 
 .hero-content {
     color: var(--white);
     text-align: left;
-    max-width: 850px;
+    max-width: 900px;
+    transform: translateX(-20px);
 }
 
 .hero-title {
@@ -3320,6 +3321,7 @@ section {
     .hero-content {
         text-align: left;
         align-items: flex-start;
+        transform: none;
     }
 
     .hero-title {
