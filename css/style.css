@@ -2102,10 +2102,12 @@ section {
     height: 100%;
     object-fit: cover;
     transition: var(--transition);
+    filter: grayscale(100%);
 }
 
 .service-card:hover .service-image img {
     transform: scale(1.05);
+    filter: grayscale(0%);
 }
 
 .service-card h3 {
@@ -2128,7 +2130,7 @@ section {
 /* ===== 고객 후기 섹션 ===== */
 .reviews {
     background: var(--bg-light);
-    padding-bottom: 0;
+    padding-bottom: 80px;
 }
 
 .reviews-wrapper {
@@ -3978,10 +3980,6 @@ section {
         display: grid !important;
         grid-template-columns: 1fr 1fr;
         gap: 15px;
-    }
-    /* 5번째 항목 숨기기 */
-    .service-card:nth-child(5) {
-        display: none;
     }
     .service-card {
         padding: 0;
