@@ -1788,7 +1788,6 @@ section {
     box-sizing: border-box;
     background: #ffffff;
     border-radius: 16px;
-    border-top: 5px solid transparent;
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -1818,11 +1817,10 @@ section {
 /* Step별 테마 색상 (Cyan -> Dark Navy 그라데이션) 및 Outglow */
 /* Step 1 */
 .step-1 .timeline-v2-text { 
-    border-top-color: #00c2cb; 
-    box-shadow: 0 10px 30px rgba(0, 194, 203, 0.05), 0 0 15px rgba(0, 194, 203, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 194, 203, 0.05);
 }
 .step-1:hover .timeline-v2-text {
-    box-shadow: 0 15px 35px rgba(0, 194, 203, 0.12), 0 0 25px rgba(0, 194, 203, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 194, 203, 0.08);
 }
 .step-1 .timeline-v2-circle { border: 4px solid #00c2cb; }
 .step-1 .circle-icon { color: #00c2cb; }
@@ -1830,11 +1828,10 @@ section {
 
 /* Step 2 */
 .step-2 .timeline-v2-text { 
-    border-top-color: #009ce2; 
-    box-shadow: 0 10px 30px rgba(0, 156, 226, 0.05), 0 0 15px rgba(0, 156, 226, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 156, 226, 0.05);
 }
 .step-2:hover .timeline-v2-text {
-    box-shadow: 0 15px 35px rgba(0, 156, 226, 0.12), 0 0 25px rgba(0, 156, 226, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 156, 226, 0.08);
 }
 .step-2 .timeline-v2-circle { border: 4px solid #009ce2; }
 .step-2 .circle-icon { color: #009ce2; }
@@ -1842,11 +1839,10 @@ section {
 
 /* Step 3 */
 .step-3 .timeline-v2-text { 
-    border-top-color: #0060ad; 
-    box-shadow: 0 10px 30px rgba(0, 96, 173, 0.05), 0 0 15px rgba(0, 96, 173, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 96, 173, 0.05);
 }
 .step-3:hover .timeline-v2-text {
-    box-shadow: 0 15px 35px rgba(0, 96, 173, 0.12), 0 0 25px rgba(0, 96, 173, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 96, 173, 0.08);
 }
 .step-3 .timeline-v2-circle { border: 4px solid #0060ad; }
 .step-3 .circle-icon { color: #0060ad; }
@@ -1854,11 +1850,10 @@ section {
 
 /* Step 4 */
 .step-4 .timeline-v2-text { 
-    border-top-color: #003666; 
-    box-shadow: 0 10px 30px rgba(0, 54, 102, 0.05), 0 0 15px rgba(0, 54, 102, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 54, 102, 0.05);
 }
 .step-4:hover .timeline-v2-text {
-    box-shadow: 0 15px 35px rgba(0, 54, 102, 0.12), 0 0 25px rgba(0, 54, 102, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 54, 102, 0.08);
 }
 .step-4 .timeline-v2-circle { border: 4px solid #003666; }
 .step-4 .circle-icon { color: #003666; }
