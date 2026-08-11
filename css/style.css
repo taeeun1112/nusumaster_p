@@ -145,6 +145,7 @@ img {
 .header.scrolled .logo .logo-text-dark,
 .header-sub .logo .logo-text-dark {
     display: block !important;
+    filter: brightness(0) saturate(100%) invert(25%) sepia(100%) saturate(900%) hue-rotate(192deg) brightness(90%);
 }
 
 .nav-list {
@@ -154,7 +155,7 @@ img {
 }
 
 .nav-list a {
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 600;
     color: var(--white);
     transition: var(--transition);
@@ -240,7 +241,7 @@ img {
     align-items: center;
     gap: 10px;
     color: var(--white);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     transition: var(--transition);
 }
@@ -424,7 +425,7 @@ img {
     align-items: center;
     justify-content: center;
     padding: 16px 44px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     border-radius: 35px;
     transition: var(--transition);
@@ -2108,8 +2109,8 @@ section {
 }
 
 .service-card h3 {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: 800;
     margin-bottom: 12px;
     color: var(--primary-color);
     text-align: center;
