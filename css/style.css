@@ -2145,6 +2145,40 @@ section {
     }
 }
 
+.services-grid-7 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+@media (min-width: 992px) {
+    .services-grid-7 {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .services-grid-7 .service-card {
+        width: calc((100% - 90px) / 4);
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .services-grid-7 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .services-grid-7 {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+}
+
 .service-card.grayscale .service-image img {
     filter: grayscale(100%);
 }
