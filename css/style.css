@@ -2064,11 +2064,28 @@ section {
     background: var(--white);
 }
 
+.service-group {
+    margin-top: 110px;
+}
+
+.service-group:first-of-type {
+    margin-top: 60px;
+}
+
+.service-group-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 36px;
+    letter-spacing: -0.5px;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    margin-top: 50px;
+    margin-top: 0; /* Remove top margin since subgroup title has margin-bottom */
 }
 
 .services-grid-5 {
