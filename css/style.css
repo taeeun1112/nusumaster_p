@@ -2088,6 +2088,38 @@ section {
     margin-top: 0; /* Remove top margin since subgroup title has margin-bottom */
 }
 
+.services-grid-center {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 0;
+}
+
+@media (max-width: 991px) {
+    .services-grid-center {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .services-grid-center {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .services-grid-center {
+        display: flex;
+        justify-content: center;
+    }
+    .services-grid-center .service-card {
+        width: calc((100% - 90px) / 4);
+        flex: 0 0 auto;
+    }
+}
+
 .services-grid-5 {
     grid-template-columns: repeat(5, 1fr);
 }
