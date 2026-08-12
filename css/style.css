@@ -2124,6 +2124,27 @@ section {
     grid-template-columns: repeat(5, 1fr);
 }
 
+.services-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+@media (max-width: 991px) {
+    .services-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .services-grid-3 {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+}
+
 .service-card.grayscale .service-image img {
     filter: grayscale(100%);
 }
